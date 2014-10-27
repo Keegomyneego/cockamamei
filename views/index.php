@@ -7,6 +7,7 @@
                 <form
                     id="signUpForm" name="signUpForm"
                     ng-submit="SignUpForm.signup(signUpForm.$valid)"
+                    autocomplete="off"
                     novalidate
                 >
                     <label for="firstname">First Name</label>
