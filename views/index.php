@@ -40,6 +40,8 @@
                     <input
                         type="password" id="password" name="password"
                         ng-model="SignUpForm.password"
+                        ng-minlength="4"
+                        ng-maxlength="31"
                         required/>
 
                     <label for="passwordConfirm">Password Confirm</label>
@@ -47,6 +49,8 @@
                         type="password" id="passwordConfirm" name="passwordConfirm"
                         pw-check="password"
                         ng-model="SignUpForm.passwordConfirm"
+                        ng-minlength="4"
+                        ng-maxlength="31"
                         required/>
 
                     <button type="submit">Sign Up</button>
