@@ -4,6 +4,7 @@
     <div class="row">
         <div class="col-xs-4 col-xs-offset-4">
             <section ng-controller="SignUpFormCtrl as SignUpForm">
+                <h1>New User</h1>
                 <form
                     id="signUpForm" name="signUpForm"
                     ng-submit="SignUpForm.signup(signUpForm.$valid)"

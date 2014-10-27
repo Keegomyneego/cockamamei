@@ -19,3 +19,8 @@ label {
     width: 100%;
 }
 
+h1 {
+    color: #555555;
+    font-family: sans-serif;
+    line-height: 36pt;
+}
