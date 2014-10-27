@@ -9,8 +9,8 @@
                     id="signUpForm" name="signUpForm"
                     ng-submit="SignUpForm.signup(signUpForm.$valid)"
                     autocomplete="off"
-                    novalidate
-                >
+                    novalidate>
+
                     <label for="firstname">First Name</label>
                     <input
                         type="text" id="firstname" name="firstname"
@@ -18,8 +18,7 @@
                         ng-pattern="SignUpForm.nameRegex"
                         ng-minlength="2"
                         ng-maxlength="31"
-                        required
-                    />
+                        required/>
 
                     <label for="lastname">Last Name</label>
                     <input
@@ -28,31 +27,27 @@
                         ng-pattern="SignUpForm.nameRegex"
                         ng-minlength="2"
                         ng-maxlength="31"
-                        required
-                    />
+                        required/>
 
                     <label for="email">Email</label>
                     <input
                         type="text" id="email" name="email"
                         ng-model="SignUpForm.email"
                         ng-pattern="SignUpForm.emailRegex"
-                        required
-                    />
+                        required/>
 
                     <label for="password">Password</label>
                     <input
                         type="password" id="password" name="password"
                         ng-model="SignUpForm.password"
-                        required
-                    />
+                        required/>
 
                     <label for="passwordConfirm">Password Confirm</label>
                     <input
                         type="password" id="passwordConfirm" name="passwordConfirm"
                         pw-check="password"
                         ng-model="SignUpForm.passwordConfirm"
-                        required
-                    />
+                        required/>
 
                     <button type="submit">Sign Up</button>
                 </form>
