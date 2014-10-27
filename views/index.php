@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-xs-4 col-xs-offset-4">
             <section ng-controller="SignUpFormCtrl as SignUpForm">
-                <h1>New User</h1>
+                <h1>Cockamamei New User</h1>
                 <form
                     id="signUpForm" name="signUpForm"
                     ng-submit="SignUpForm.signup(signUpForm.$valid)"
@@ -53,7 +53,8 @@
                         ng-maxlength="31"
                         required/>
 
-                    <button type="submit">Sign Up</button>
+                    <button type="submit" class="md success button">Sign Up</button>
+                    <button type="reset" class="md alert button">Clear</button>
                 </form>
             </section>
         </div>
