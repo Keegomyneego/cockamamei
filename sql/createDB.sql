@@ -9,7 +9,8 @@ FirstName varchar(50) NOT NULL,
 LastName varchar(50) NOT NULL,
 EmailAddress varchar(254) NOT NULL,
 PassHashed bit(512) NOT NULL, --USE A SHA2 FUNCTION ON THE "USERPASSWORD + Salt" that returns 512 bit
-Salt bit(512) NOT NULL, --RANDOMLY GENERATED STRING SHA2'd that returns 512 bit
+Salt bit(512) NOT NULL, --RANDOMLY GENERATED
+CreatedOn DATETIME NOT NULL,
 PRIMARY KEY (AccountID)
 );
 
