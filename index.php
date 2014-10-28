@@ -18,7 +18,7 @@ require_once 'application/Template.php';
  */
 function __autoload($className)
 {
-    $filename = strtolower($className) . '.php';
+    $filename = ($className) . '.php';
     $file = 'models/' . $filename;
 
     if(file_exists($file))
