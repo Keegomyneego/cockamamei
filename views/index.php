@@ -53,7 +53,7 @@
                         ng-maxlength="31"
                         required/>
 
-                    <button type="submit" class="md success button">Sign Up</button>
+                    <button type="submit" class="md success button" ng-disabled="signUpForm.$invalid">Sign Up</button>
                     <button type="reset" class="md alert button">Clear</button>
                 </form>
             </section>

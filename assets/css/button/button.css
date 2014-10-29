@@ -39,7 +39,21 @@
     padding: 8px 20px;
 }
 
-.button.success,
+.button.success:disabled,
+.button.warning:disabled,
+.button.alert:disabled {
+    background: #bebebe; /* Old browsers */
+    background: -moz-linear-gradient(top,  #bebebe 0%, #ababab 44%, #939393 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#bebebe), color-stop(44%,#ababab), color-stop(100%,#939393)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #bebebe 0%,#ababab 44%,#939393 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #bebebe 0%,#ababab 44%,#939393 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #bebebe 0%,#ababab 44%,#939393 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #bebebe 0%,#ababab 44%, #939393 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bebebe', endColorstr='#939393',GradientType=0 ); /* IE6-9 */
+    border-top: 1px solid #dddddd;
+    border-bottom: 1px solid #707070;
+}
+
 .button.success {
     background: #c9de96; /* Old browsers */
     background: -moz-linear-gradient(top,  #c9de96 0%, #8ab66b 44%, #398235 100%); /* FF3.6+ */
@@ -53,7 +67,6 @@
     border-bottom: 1px solid #2F6017;
 }
 
-.button.success:active,
 .button.success:active {
     background: #398235; /* Old browsers */
     background: -moz-linear-gradient(top,  #398235 0%, #8ab66b 56%, #c9de96 100%); /* FF3.6+ */
@@ -70,7 +83,6 @@
     border-bottom: 1px solid #CFEDA2;
 }
 
-.button.warning,
 .button.warning {
     background: rgb(255,214,94); /* Old browsers */
     background: -moz-linear-gradient(top,  rgba(255,214,94,1) 0%, rgba(254,191,4,1) 100%); /* FF3.6+ */
@@ -84,7 +96,6 @@
     border-bottom: 1px solid #e5ac04;
 }
 
-.button.warning:active,
 .button.warning:active {
     background: rgb(254,191,4); /* Old browsers */
     background: -moz-linear-gradient(top,  rgba(254,191,4,1) 0%, rgba(255,214,94,1) 100%); /* FF3.6+ */
@@ -101,7 +112,6 @@
     border-bottom: 1px solid #ffe17a;
 }
 
-.button.alert,
 .button.alert {
     background: #ff3019; /* Old browsers */
     background: -moz-linear-gradient(top,  #ff3019 0%, #c00404 100%); /* FF3.6+ */
@@ -115,7 +125,6 @@
     border-bottom: 1px solid #b10404;
 }
 
-.button.alert:active,
 .button.alert:active {
     background: #c00404; /* Old browsers */
     background: -moz-linear-gradient(top,  #c00404 0%, #ff3019 100%); /* FF3.6+ */
