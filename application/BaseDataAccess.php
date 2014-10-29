@@ -24,7 +24,8 @@ class BaseDataAccess
      * @param mixed $id
      * @return object
      */
-    public static function findById($id) {
+    public static function findById($id)
+    {
         $object = new static;
 
         $sql = 'select ' . $object->getPropertiesString() . ' ' .
@@ -39,7 +40,8 @@ class BaseDataAccess
      * @param array $properties
      * @return array of objects
      */
-    public static function findByProperties(array $properties) {
+    public static function findByProperties(array $properties)
+    {
         $object = new static;
         $filters = array();
         $values = array();
@@ -48,7 +50,8 @@ class BaseDataAccess
             'from ' . $object->table . ' ' .
             'where ';
 
-        foreach($properties as $key => $value) {
+        foreach($properties as $key => $value)
+        {
             $filters[] = $key . ' = ?';
             $values[] = $value;
         }
@@ -56,6 +59,52 @@ class BaseDataAccess
         $sql .= join(' and ', $filters) . ';';
 
         return $object->fetch($sql, $values);
+    }
+
+    /**
+     * existById
+     * @param $id
+     * @return mixed
+     */
+    public static function existById($id)
+    {
+        $object = new static;
+
+        $sql = 'select count(*) as count ' .
+            'from ' . $object->table . ' ' .
+            'where ' . $object->primary_key . ' = ?;';
+
+        $result = $object->fetchSingle($sql, array($id));
+
+        return $result->count > 0;
+    }
+
+    /**
+     * existByProperties
+     * @param array $properties
+     * @return bool
+     */
+    public static function existByProperties(array $properties)
+    {
+        $object = new static;
+        $filters = array();
+        $values = array();
+
+        $sql = 'select count(*) as count ' .
+            'from ' . $object->table . ' ' .
+            'where ';
+
+        foreach($properties as $key => $value)
+        {
+            $filters[] = $key . ' = ?';
+            $values[] = $value;
+        }
+
+        $sql .= join(' and ', $filters) . ';';
+
+        $result = $object->fetchSingle($sql, $values);
+
+        return $result->count > 0;
     }
 
     /**
