@@ -71,7 +71,7 @@ class BaseDataAccess
         foreach($properties as $property) {
             $name = $property->name;
 
-            if($name != 'table' && $name != 'primary_key' && $name != 'id') {
+            if($name != 'table' && $name != 'primary_key' && $name != $this->primary_key) {
                 $tokens[] = $name;
                 $values[] = '?';
             }
@@ -100,7 +100,7 @@ class BaseDataAccess
         foreach($properties as $property) {
             $name = $property->name;
 
-            if($name != 'table' && $name != 'primary_key' && $name != 'id') {
+            if($name != 'table' && $name != 'primary_key' && $name != $this->primary_key) {
                 $tokens[] = $name.' = ?';
             }
         }

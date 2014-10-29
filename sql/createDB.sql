@@ -46,7 +46,7 @@ CREATE TABLE tblAccountGroup
 (
   AccountGroupID int NOT NULL AUTO_INCREMENT,
   AccountID int NOT NULL,
-  GroupID int,
+  GroupID int NOT NULL,
   PRIMARY KEY (AccountGroupID),
   FOREIGN KEY (AccountID) REFERENCES tblAccount (AccountID),
   FOREIGN KEY (GroupID) REFERENCES tblGroup (GroupID)
