@@ -16,7 +16,7 @@
             {
                 $http({
                     method: 'POST',
-                    url: 'account/create',
+                    url: 'user/create',
                     data: $.param({
                         firstname: this.firstname,
                         lastname: this.lastname,
