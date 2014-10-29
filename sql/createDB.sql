@@ -1,8 +1,8 @@
 CREATE DATABASE cockamamei;
 
-USE DATABASE cockamamei;
+USE cockamamei;
 
-CREATE TABLE tblAccount 
+CREATE TABLE tblAccount
 (
   AccountID int NOT NULL AUTO_INCREMENT,
   FirstName varchar(50) NOT NULL,
@@ -10,7 +10,7 @@ CREATE TABLE tblAccount
   EmailAddress varchar(254) NOT NULL,
   PassHashed varchar(512) NOT NULL,
   Salt varchar(512) NOT NULL,
-  CreatedOn DATETIME NOT NULL,
+  CreatedOn datetime NOT NULL,
   PRIMARY KEY (AccountID)
 );
 
@@ -22,15 +22,17 @@ CREATE TABLE tblEventType
   PRIMARY KEY (EventTypeID)
 );
 
-CREATE TABLE tblEvent 
+CREATE TABLE tblEvent
 (
   EventID int NOT NULL AUTO_INCREMENT,
-  UserID int NOT NULL FOREIGN KEY REFERENCES tblAccount (AccountID),
-  EventStart DATETIME NOT NULL,
-  EventEnd DATETIME NOT NULL,
+  AccountID int NOT NULL,
+  EventStart datetime NOT NULL,
+  EventEnd datetime NOT NULL,
   LocationString varchar(250),
-  EventTypeID int NOT NULL REFERENCES tblEventType (EventTypeID),
-  PRIMARY KEY (EventID)
+  EventTypeID int NOT NULL,
+  PRIMARY KEY (EventID),
+  FOREIGN KEY (AccountID) REFERENCES tblAccount (AccountID),
+  FOREIGN KEY (EventTypeID) REFERENCES tblEventType (EventTypeID)
 );
 
 CREATE TABLE tblGroup
@@ -40,10 +42,12 @@ CREATE TABLE tblGroup
   PRIMARY KEY (GroupID)
 );
 
-CREATE TABLE accountGroup
+CREATE TABLE tblAccountGroup
 (
   AccountGroupID int NOT NULL AUTO_INCREMENT,
-  accountid int NOT NULL REFERENCES tblAccount (AccountID),
-  GroupID int NOT NULL REFERENCES tblGroup (GroupID),
-  PRIMARY KEY (AccountGroupID)
+  AccountID int NOT NULL,
+  GroupID int,
+  PRIMARY KEY (AccountGroupID),
+  FOREIGN KEY (AccountID) REFERENCES tblAccount (AccountID),
+  FOREIGN KEY (GroupID) REFERENCES tblGroup (GroupID)
 );
