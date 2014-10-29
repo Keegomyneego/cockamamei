@@ -132,7 +132,7 @@ class BaseDataAccess
         $db = db::getInstance();
         $stmt = $db->prepare($sql);
         $stmt->execute($this->bindProperties());
-        $this->id = $db->lastInsertId();
+        $this->{$this->primary_key} = $db->lastInsertId();
 
         $error = $stmt->errorInfo();
         return ($error[0] === '00000');
