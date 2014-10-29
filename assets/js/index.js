@@ -28,7 +28,7 @@
                         'Content-Type': 'application/x-www-form-urlencoded'
                     }
                 }).success(function(data) {
-                    // on success
+                    alert(data);
                 });
             }
 

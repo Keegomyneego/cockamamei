@@ -21,6 +21,6 @@ class accountController extends BaseController
         $account->PassHashed = password_hash($password, PASSWORD_DEFAULT, array('salt' => $salt));
         $account->Salt = $salt;
         $account->CreatedOn = $now->format('Y-m-d H:i:s');
-        $account->insert();
+        echo $account->insert();
     }
 }
