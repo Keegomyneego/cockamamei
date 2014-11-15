@@ -54,7 +54,7 @@
                         required/>
 
                     <button type="submit" class="md success button" ng-disabled="signUpForm.$invalid">Sign Up</button>
-                    <button type="reset" class="md alert button" ng-click="SignUpForm.clear()">Clear</button>
+                    <button type="reset" class="md alert button" ng-click="SignUpForm.erase()">Clear</button>
                 </form>
             </section>
         </div>
