@@ -54,8 +54,9 @@
                         required/>
 
                     <button type="submit" class="md success button" ng-disabled="signUpForm.$invalid">Sign Up</button>
-                    <button type="reset" class="md alert button" ng-click="SignUpForm.erase()">Clear</button>
-                    <button class="right md success button" ng-click="Body.toggleSection('login', $event)">Login</button>
+                    or <a href="#" class="action" ng-click="Body.toggleSection('login', $event)">Login</a>
+
+                    <button type="reset" class="right md alert button" ng-click="SignUpForm.erase()">Clear</button>
                 </form>
             </section>
 
@@ -84,8 +85,9 @@
                         required/>
 
                     <button type="submit" class="md success button" ng-disabled="loginForm.$invalid">Login</button>
-                    <button type="reset" class="md alert button" ng-click="LoginForm.erase()">Clear</button>
-                    <button class="right md success button" ng-click="Body.toggleSection('signup', $event)">Sign Up</button>
+                    or <a href="#" class="action" ng-click="Body.toggleSection('signup', $event)">Sign Up</a>
+
+                    <button type="reset" class="right md alert button" ng-click="LoginForm.erase()">Clear</button>
                 </form>
             </section>
         </div>

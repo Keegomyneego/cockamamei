@@ -12,7 +12,21 @@
 html {
     color: #888888;
     font-family: sans-serif;
-    font-size: 16pt;
+    font-size: 12pt;
+}
+
+a {
+    color: dodgerblue;
+    text-decoration: none;
+}
+
+a.action {
+    font-size: 10pt;
+    text-transform: uppercase;
+}
+
+a.action:hover {
+    text-decoration: underline;
 }
 
 label {
