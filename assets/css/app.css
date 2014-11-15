@@ -7,3 +7,6 @@
 /* External Modules CSS */
 @import url('../modules/C3/c3.css');
 
+body {
+    padding-top: 100px;
+}

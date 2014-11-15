@@ -11,7 +11,14 @@
         this.emailRegex = /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/;
         this.nameRegex = /^[A-Za-z']+$/;
 
-        this.signup = function(isValid) {
+        this.firstname = 'chau';
+        this.lastname = 'ngo';
+        this.email = 'ngokchau@gmail.com';
+        this.password = '123qwe';
+        this.passwordConfirm = '123qwe';
+
+        this.signup = function(isValid)
+        {
             if(isValid)
             {
                 $http({
@@ -31,7 +38,15 @@
                     alert(data);
                 });
             }
+        };
 
+        this.clear = function()
+        {
+            this.firstname = '';
+            this.lastname = '';
+            this.email = '';
+            this.password = '';
+            this.passwordConfirm = '';
         }
     }]);
 
