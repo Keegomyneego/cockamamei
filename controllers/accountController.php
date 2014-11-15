@@ -2,7 +2,21 @@
 
 class accountController extends BaseController
 {
-    public function index() { }
+    public function index()
+    {
+        session_start();
+
+        $this->redirectIfNullOrEmpty($_SESSION['account_id'], '/' . __PROJECT_NAME);
+
+        $account_id = $_SESSION['account_id'];
+
+        /** @var Account $account */
+        $account = Account::findById($account_id);
+
+        $this->template->firstname = ucfirst($account->FirstName);
+        $this->template->lastname = ucfirst($account->LastName);
+        $this->template->render('account/index');
+    }
 
     /**
      * create
@@ -26,7 +40,15 @@ class accountController extends BaseController
             $account->PassHashed = password_hash($password, PASSWORD_DEFAULT, array('salt' => $salt));
             $account->Salt = $salt;
             $account->CreatedOn = $now->format('Y-m-d H:i:s');
-            echo $account->insert();
+
+            if($account->insert())
+            {
+                echo 1;
+            }
+            else
+            {
+                echo 0;
+            }
         }
     }
 
@@ -35,6 +57,22 @@ class accountController extends BaseController
      */
     public function login()
     {
-        $a = 'hello';
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+
+        /** @var Account $account */
+        $account = Account::findByProperties(array('EmailAddress' => $email));
+        $account = $account[0];
+
+        if(password_verify($password, $account->PassHashed))
+        {
+            session_start();
+            $_SESSION['account_id'] = $account->AccountID;
+            echo 1;
+        }
+        else
+        {
+            echo 0;
+        }
     }
 }
