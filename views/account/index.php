@@ -9,7 +9,7 @@
         </div>
         <div class="col-xs-1">
             <p>
-                <a href="logout">Logout</a>
+                <a href="logout" class="right">Logout</a>
             </p>
         </div>
     </div>
@@ -21,6 +21,15 @@
                 <li>Finalize design</li>
                 <li>Ideation for Krypt</li>
             </ul>
+        </div>
+        <div class="col-xs-1" style="background: red; height: 300px;">
+
+        </div>
+        <div class="col-xs-6" style="background: blue; height: 300px;">
+
+        </div>
+        <div class="col-xs-1" style="background: red; height: 300px;">
+
         </div>
     </div>
 </div>
