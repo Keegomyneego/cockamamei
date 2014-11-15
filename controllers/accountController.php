@@ -2,6 +2,9 @@
 
 class accountController extends BaseController
 {
+    /**
+     * index
+     */
     public function index()
     {
         session_start();
@@ -13,6 +16,7 @@ class accountController extends BaseController
         /** @var Account $account */
         $account = Account::findById($account_id);
 
+        $this->template->title = ucfirst($account->FirstName) . ' ' . ucfirst($account->LastName) . ' | ' . __PROJECT_NAME;
         $this->template->firstname = ucfirst($account->FirstName);
         $this->template->lastname = ucfirst($account->LastName);
         $this->template->render('account/index');
@@ -43,6 +47,10 @@ class accountController extends BaseController
 
             if($account->insert())
             {
+                session_start();
+
+                $_SESSION['account_id'] = $account->AccountID;
+
                 echo 1;
             }
             else
@@ -67,12 +75,25 @@ class accountController extends BaseController
         if(password_verify($password, $account->PassHashed))
         {
             session_start();
+
             $_SESSION['account_id'] = $account->AccountID;
+
             echo 1;
         }
         else
         {
             echo 0;
         }
+    }
+
+    /**
+     * logout
+     */
+    public function logout()
+    {
+        session_start();
+        session_destroy();
+
+        $this->redirect('index');
     }
 }

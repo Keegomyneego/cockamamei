@@ -44,3 +44,7 @@ h1 {
     font-family: sans-serif;
     line-height: 36pt;
 }
+
+ul {
+    list-style: decimal inside;
+}

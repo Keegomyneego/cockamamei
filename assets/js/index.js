@@ -43,7 +43,14 @@
                         'Content-Type': 'application/x-www-form-urlencoded'
                     }
                 }).success(function(data) {
-                    alert(data);
+                    if(1 == data)
+                    {
+                        window.location = 'account/index';
+                    }
+                    else
+                    {
+                        alert('Error');
+                    }
                 });
             }
         }
