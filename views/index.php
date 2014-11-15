@@ -55,7 +55,7 @@
 
                     <button type="submit" class="md success button" ng-disabled="signUpForm.$invalid">Sign Up</button>
                     <button type="reset" class="md alert button" ng-click="SignUpForm.erase()">Clear</button>
-                    <button class="right md success button" ng-click="Body.updateSection('login')">Login</button>
+                    <button class="right md success button" ng-click="Body.toggleSection('login', $event)">Login</button>
                 </form>
             </section>
 
@@ -85,7 +85,7 @@
 
                     <button type="submit" class="md success button" ng-disabled="loginForm.$invalid">Login</button>
                     <button type="reset" class="md alert button" ng-click="LoginForm.erase()">Clear</button>
-                    <button class="right md success button" ng-click="Body.updateSection('signup')">Sign Up</button>
+                    <button class="right md success button" ng-click="Body.toggleSection('signup', $event)">Sign Up</button>
                 </form>
             </section>
         </div>

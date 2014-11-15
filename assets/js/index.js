@@ -8,8 +8,9 @@
         var current = this;
         var section = 'login';
 
-        current.updateSection = function(id)
+        current.toggleSection = function(id, $event)
         {
+            $event.preventDefault();
             section = id;
         }
 
