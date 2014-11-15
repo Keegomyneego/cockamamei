@@ -1,0 +1,13 @@
+.right {
+    position: absolute;
+    right: 10px;
+}
+
+.left {
+    position: absolute;
+    left: 10px;
+}
+
+.center {
+    margin: 0 auto;
+}

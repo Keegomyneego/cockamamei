@@ -4,14 +4,27 @@
     var C = angular.module(projectName, ['pwCheck']);
     var D = angular.module('pwCheck', []);
 
-    C.controller('BodyCtrl', ['$scope', function($scope) { }]);
+    C.controller('BodyCtrl', [function() {
+        var current = this;
+        var section = 'login';
+
+        current.updateSection = function(id)
+        {
+            section = id;
+        }
+
+        current.is = function(id)
+        {
+            return section == id;
+        }
+    }]);
 
     C.controller('SignUpFormCtrl', ['$http', function($http) {
         var current = this;
-        this.emailRegex = /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/;
-        this.nameRegex = /^[A-Za-z']+$/;
+        current.emailRegex = /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/;
+        current.nameRegex = /^[A-Za-z']+$/;
 
-        this.signup = function(isValid)
+        current.signup = function(isValid)
         {
             if(isValid)
             {
@@ -19,11 +32,11 @@
                     method: 'POST',
                     url: 'account/create',
                     data: $.param({
-                        firstname: this.firstname,
-                        lastname: this.lastname,
-                        email: this.email,
-                        password: this.password,
-                        passwordConfirm: this.passwordConfirm
+                        firstname: current.firstname,
+                        lastname: current.lastname,
+                        email: current.email,
+                        password: current.password,
+                        passwordConfirm: current.passwordConfirm
                     }),
                     headers: {
                         'Content-Type': 'application/x-www-form-urlencoded'
@@ -32,15 +45,47 @@
                     alert(data);
                 });
             }
-        };
+        }
 
-        this.erase = function()
+        current.erase = function()
         {
-            this.firstname = '';
-            this.lastname = '';
-            this.email = '';
-            this.password = '';
-            this.passwordConfirm = '';
+            current.firstname = '';
+            current.lastname = '';
+            current.email = '';
+            current.password = '';
+            current.passwordConfirm = '';
+        }
+    }]);
+
+    C.controller('LoginFormCtrl', ['$http', function($http) {
+        var current = this;
+        current.emailRegex = /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/;
+        current.nameRegex = /^[A-Za-z']+$/;
+
+        current.login = function(isValid)
+        {
+            if(isValid)
+            {
+                $http({
+                    method: 'POST',
+                    url: 'account/login',
+                    data: $.param({
+                        email: current.email,
+                        password: current.password
+                    }),
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    }
+                }).success(function(data) {
+                    alert(data);
+                });
+            }
+        }
+
+        current.erase = function()
+        {
+            current.email = '';
+            current.password = '';
         }
     }]);
 

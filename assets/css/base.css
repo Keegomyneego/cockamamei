@@ -9,6 +9,12 @@
     outline: none;
 }
 
+html {
+    color: #888888;
+    font-family: sans-serif;
+    font-size: 16pt;
+}
+
 label {
     color: #888888;
     display: block;

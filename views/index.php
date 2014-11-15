@@ -3,8 +3,8 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-4 col-xs-offset-4">
-            <section ng-controller="SignUpFormCtrl as SignUpForm">
-                <h1>Cockamamei New User</h1>
+            <section ng-controller="SignUpFormCtrl as SignUpForm" ng-show="Body.is('signup')">
+                <h1>Sign Up</h1>
                 <form
                     id="signUpForm" name="signUpForm"
                     ng-submit="SignUpForm.signup(signUpForm.$valid)"
@@ -55,6 +55,37 @@
 
                     <button type="submit" class="md success button" ng-disabled="signUpForm.$invalid">Sign Up</button>
                     <button type="reset" class="md alert button" ng-click="SignUpForm.erase()">Clear</button>
+                    <button class="right md success button" ng-click="Body.updateSection('login')">Login</button>
+                </form>
+            </section>
+
+            <section ng-controller="LoginFormCtrl as LoginForm" ng-show="Body.is('login')">
+                <h1>Login</h1>
+
+                <form
+                    id="loginForm" name="loginForm"
+                    ng-submit="LoginForm.login(loginForm.$valid)"
+                    autocomplete="off"
+                    novalidate>
+
+                    <label for="email">Email</label>
+                    <input
+                        type="text" id="email" name="email"
+                        ng-model="LoginForm.email"
+                        ng-pattern="LoginForm.emailRegex"
+                        required/>
+
+                    <label for="password">Password</label>
+                    <input
+                        type="password" id="password" name="password"
+                        ng-model="LoginForm.password"
+                        ng-minlength="4"
+                        ng-maxlength="31"
+                        required/>
+
+                    <button type="submit" class="md success button" ng-disabled="loginForm.$invalid">Login</button>
+                    <button type="reset" class="md alert button" ng-click="LoginForm.erase()">Clear</button>
+                    <button class="right md success button" ng-click="Body.updateSection('signup')">Sign Up</button>
                 </form>
             </section>
         </div>

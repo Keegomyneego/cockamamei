@@ -4,6 +4,9 @@ class accountController extends BaseController
 {
     public function index() { }
 
+    /**
+     * create
+     */
     public function create()
     {
         $firstname = $_POST['firstname'];
@@ -25,5 +28,13 @@ class accountController extends BaseController
             $account->CreatedOn = $now->format('Y-m-d H:i:s');
             echo $account->insert();
         }
+    }
+
+    /**
+     * login
+     */
+    public function login()
+    {
+        $a = 'hello';
     }
 }

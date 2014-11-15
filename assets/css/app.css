@@ -3,6 +3,7 @@
 @import url('grid/grid.css');
 @import url('input/input.css');
 @import url('button/button.css');
+@import url('align/align.css');
 
 /* External Modules CSS */
 @import url('../modules/C3/c3.css');
