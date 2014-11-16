@@ -12,17 +12,12 @@ class indexController extends BaseController
      */
     public function index()
     {
-//        $config = Config::getInstance();
-//
-//        /** @var Aws $aws */
-//        $aws = Aws::factory(array(
-//            'key' => $config['aws_access_key_id'],
-//            'secret' => $config['aws_secret_access_key']
-//        ));
-//
-//        /** @var S3Client $s3 */
-//        $s3 = $aws->get('S3');
-//        $a = $s3->listBuckets();
+        session_start();
+
+        if(isset($_SESSION['account_id']) && !is_null($_SESSION['account_id']))
+        {
+            $this->redirect('account/index');
+        }
 
         $this->template->render('index');
     }
