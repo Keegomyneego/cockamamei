@@ -33,12 +33,12 @@
             for($i = 0; $i < 7; $i++)
             {
             ?>
-                <div style="width: 14.28%; float: left;">
+                <div style="height: 50px;">
                     <?php
                     $now = new DateTime('now');
                     $now->modify('+' . $i . ' day');
                     ?>
-                    <h5 class="center"><?php echo $now->format('M. d, Y'); ?></h5>
+                    <h4 class="center"><?php echo $now->format('D, M. d, Y'); ?></h4>
                 </div>
             <?php
             }
