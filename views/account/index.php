@@ -46,20 +46,20 @@
                                 </th>
                             </tr>
                                 <?
-                                $startTime = 6;
-                                $endTime = 18;
+                                $startTime = 6; //start day at 6am
+                                $endTime = 18; //end day at 6pm
                                 while($startTime <= $endTime) {
                                     ?>
                                     <tr>
                                         <td>
-                                            <?php echo date($startTime) ?>
+                                            <?php echo date('h:i:s', $startTime) //attempt to print int as time. Bug will probably be here. ?>
                                         </td>
                                         <td>
-
+                                            <?php //We will use this empty column to display initial info (color it when they hover over time or something ?>
                                         </td>
                                     </tr>
                                 <?
-                                    $startTime++;
+                                    $startTime++; //hourly increment
                                 }
                                 ?>
                         </table>
