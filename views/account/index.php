@@ -37,8 +37,32 @@
                     <?php
                     $now = new DateTime('now');
                     $now->modify('+' . $i . ' day');
+
                     ?>
-                    <h4 class="center"><?php echo $now->format('D, M. d, Y'); ?></h4>
+                        <table>
+                            <tr>
+                                <th>
+                                    <h4 class="center"><?php echo $now->format('D, M. d, Y'); ?></h4>
+                                </th>
+                            </tr>
+                                <?
+                                $startTime = 6;
+                                $endTime = 18;
+                                while($startTime <= $endTime) {
+                                    ?>
+                                    <tr>
+                                        <td>
+                                            <?php echo date($startTime) ?>
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                    </tr>
+                                <?
+                                    $startTime++;
+                                }
+                                ?>
+                        </table>
                 </div>
             <?php
             }
