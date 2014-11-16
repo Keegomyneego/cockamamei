@@ -22,14 +22,22 @@
                 <li>Ideation for Krypt</li>
             </ul>
         </div>
-        <div class="col-xs-1" style="background: red; height: 300px;">
-
-        </div>
-        <div class="col-xs-6" style="background: blue; height: 300px;">
-
-        </div>
-        <div class="col-xs-1" style="background: red; height: 300px;">
-
+        <div class="col-xs-8">
+            <h1>Week View</h1>
+            <?php
+            for($i = 0; $i < 7; $i++)
+            {
+            ?>
+                <div style="width: 14.28%; float: left;">
+                    <?php
+                    $now = new DateTime('now');
+                    $now->modify('+' . $i . ' day');
+                    ?>
+                    <h6><?php echo $now->format('M. d, Y'); ?></h6>
+                </div>
+            <?php
+            }
+            ?>
         </div>
     </div>
 </div>
