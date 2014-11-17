@@ -33,11 +33,10 @@
             for($i = 0; $i < 7; $i++)
             {
             ?>
-                <div style="height: 50px;">
+                <div>
                     <?php
                     $now = new DateTime('now');
                     $now->modify('+' . $i . ' day');
-
                     ?>
                         <table>
                             <tr>
@@ -45,23 +44,20 @@
                                     <h4 class="center"><?php echo $now->format('D, M. d, Y'); ?></h4>
                                 </th>
                             </tr>
-                                <?
-                                $startTime = 6; //start day at 6am
-                                $endTime = 18; //end day at 6pm
-                                while($startTime <= $endTime) {
-                                    ?>
-                                    <tr>
-                                        <td>
-                                            <?php echo date('h:i:s', $startTime) //attempt to print int as time. Bug will probably be here. ?>
-                                        </td>
-                                        <td>
-                                            <?php //We will use this empty column to display initial info (color it when they hover over time or something ?>
-                                        </td>
-                                    </tr>
-                                <?
-                                    $startTime++; //hourly increment
-                                }
-                                ?>
+                            <?php
+                            for($j = 0; $j < 12; $j++)
+                            {
+                                $startTime = new DateTime('6:00:00 AM');
+                                $startTime->modify('+' . $j . ' hour');
+                            ?>
+                                <tr>
+                                    <td>
+                                        <?php echo $startTime->format('h:i:s A'); ?>
+                                    </td>
+                                </tr>
+                            <?php
+                            }
+                            ?>
                         </table>
                 </div>
             <?php
