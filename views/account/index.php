@@ -9,6 +9,13 @@ td {
 }
 </style>
 
+<script>
+    function sendEmail() {
+        window.open("views/account/emailForm.html", "_blank", "toolbar=yes, scrollbars=yes, resizable=yes, top=500, left=500, width=400, height=400");
+    }
+
+</script>
+
 <div class="container">
     <div class="row" >
         <div class="col-xs-10">
