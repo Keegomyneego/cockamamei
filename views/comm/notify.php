@@ -3,9 +3,11 @@
 <form>
     <label>Invite to meeting:</label><textarea> Bryant, Hamzah, Chau, Keegan </textarea>
 
-    <label>Meeting Location:</label><textare> BLD 070 </textare>
+    <label>Meeting Location:</label><textarea> BLD 070 </textare>
 
-    This is obviously just to see if I understand this system..will update later
+    <label>Custom Message:</label><textarea> </textarea>
+
+        <button type=button" onclick="window.close(); alert("email sent")">Send</button>
 </form>
 
 

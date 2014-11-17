@@ -2,6 +2,7 @@
     var currentPathParts = window.location.pathname.split('/');
     var projectName = currentPathParts[1];
     var C = angular.module(projectName, []);
+    $(perfectWeek).onclick(notify());
 
     C.controller('BodyCtrl', [function() {
 
