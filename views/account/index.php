@@ -53,94 +53,94 @@ td {
                 </tr>
                 <tr>
                     <td>06:00:00 AM</td>
-                    <td style="background: darkred;"></td>
-                    <td style="background: forestgreen;"></td>
-                    <td style="background: darkred;"></td>
-                    <td style="background: forestgreen;"></td>
+                    <td style="background: #ff4646;"></td>
+                    <td style="background: #68e23f;"></td>
+                    <td style="background: #ff4646;"></td>
+                    <td style="background: #68e23f;"></td>
                 </tr>
                 <tr>
                     <td>07:00:00 AM</td>
-                    <td style="background: darkred;"></td>
-                    <td style="background: darkred;"></td>
-                    <td style="background: forestgreen;"></td>
-                    <td style="background: darkred;"></td>
+                    <td style="background: #ff4646;"></td>
+                    <td style="background: #ff4646;"></td>
+                    <td style="background: #68e23f;"></td>
+                    <td style="background: #ff4646;"></td>
                 </tr>
                 <tr>
                     <td>08:00:00 AM</td>
-                    <td style="background: darkred;"></td>
-                    <td style="background: forestgreen;"></td>
-                    <td style="background: forestgreen;"></td>
-                    <td style="background: darkred;"></td>
+                    <td style="background: #ff4646;"></td>
+                    <td style="background: #68e23f;"></td>
+                    <td style="background: #68e23f;"></td>
+                    <td style="background: #ff4646;"></td>
                 </tr>
                 <tr>
                     <td>09:00:00 AM</td>
-                    <td style="background: darkred;"></td>
-                    <td style="background: forestgreen;"></td>
-                    <td style="background: forestgreen;"></td>
-                    <td style="background: forestgreen;"></td>
+                    <td style="background: #ff4646;"></td>
+                    <td style="background: #68e23f;"></td>
+                    <td style="background: #68e23f;"></td>
+                    <td style="background: #68e23f;"></td>
                 </tr>
                 <tr>
                     <td>10:00:00 AM</td>
-                    <td style="background: forestgreen;"></td>
-                    <td style="background: darkred;"></td>
-                    <td style="background: forestgreen;"></td>
-                    <td style="background: darkred;"></td>
+                    <td style="background: #68e23f;"></td>
+                    <td style="background: #ff4646;"></td>
+                    <td style="background: #68e23f;"></td>
+                    <td style="background: #ff4646;"></td>
                 </tr>
                 <tr id="perfectWeek">
                     <td style="border: 2px solid gold;">11:00:00 AM</td>
-                    <td style="background: forestgreen;"></td>
-                    <td style="background: forestgreen;"></td>
-                    <td style="background: forestgreen;"></td>
-                    <td style="background: forestgreen;"></td>
+                    <td style="border: 2px solid gold; background: #68e23f;"></td>
+                    <td style="border: 2px solid gold; background: #68e23f;"></td>
+                    <td style="border: 2px solid gold; background: #68e23f;"></td>
+                    <td style="border: 2px solid gold; background: #68e23f;"></td>
                 </tr>
                 <tr>
                     <td>12:00:00 PM</td>
-                    <td style="background: darkred;"></td>
-                    <td style="background: forestgreen;"></td>
-                    <td style="background: darkred;"></td>
-                    <td style="background: forestgreen;"></td>
+                    <td style="background: #ff4646;"></td>
+                    <td style="background: #68e23f;"></td>
+                    <td style="background: #ff4646;"></td>
+                    <td style="background: #68e23f;"></td>
                 </tr>
                 <tr>
                     <td>01:00:00 PM</td>
-                    <td style="background: darkred;"></td>
-                    <td style="background: forestgreen;"></td>
-                    <td style="background: forestgreen;"></td>
-                    <td style="background: darkred;"></td>
+                    <td style="background: #ff4646;"></td>
+                    <td style="background: #68e23f;"></td>
+                    <td style="background: #68e23f;"></td>
+                    <td style="background: #ff4646;"></td>
                 </tr>
                 <tr>
                     <td>02:00:00 PM</td>
-                    <td style="background: forestgreen;"></td>
-                    <td style="background: forestgreen;"></td>
-                    <td style="background: darkred;"></td>
-                    <td style="background: forestgreen;"></td>
+                    <td style="background: #68e23f;"></td>
+                    <td style="background: #68e23f;"></td>
+                    <td style="background: #ff4646;"></td>
+                    <td style="background: #68e23f;"></td>
                 </tr>
                 <tr>
                     <td>03:00:00 PM</td>
-                    <td style="background: darkred;"></td>
-                    <td style="background: darkred;"></td>
-                    <td style="background: forestgreen;"></td>
-                    <td style="background: darkred;"></td>
+                    <td style="background: #ff4646;"></td>
+                    <td style="background: #ff4646;"></td>
+                    <td style="background: #68e23f;"></td>
+                    <td style="background: #ff4646;"></td>
                 </tr>
                 <tr>
                     <td>04:00:00 PM</td>
-                    <td style="background: darkred;"></td>
-                    <td style="background: darkred;"></td>
-                    <td style="background: forestgreen;"></td>
-                    <td style="background: darkred;"></td>
+                    <td style="background: #ff4646;"></td>
+                    <td style="background: #ff4646;"></td>
+                    <td style="background: #68e23f;"></td>
+                    <td style="background: #ff4646;"></td>
                 </tr>
                 <tr>
                     <td>05:00:00 PM</td>
-                    <td style="background: darkred;"></td>
-                    <td style="background: forestgreen;"></td>
-                    <td style="background: darkred;"></td>
-                    <td style="background: darkred;"></td>
+                    <td style="background: #ff4646;"></td>
+                    <td style="background: #68e23f;"></td>
+                    <td style="background: #ff4646;"></td>
+                    <td style="background: #ff4646;"></td>
                 </tr>
                 <tr>
                     <td>06:00:00 PM</td>
-                    <td style="background: darkred;"></td>
-                    <td style="background: darkred;"></td>
-                    <td style="background: darkred;"></td>
-                    <td style="background: darkred;"></td>
+                    <td style="background: #ff4646;"></td>
+                    <td style="background: #ff4646;"></td>
+                    <td style="background: #ff4646;"></td>
+                    <td style="background: #ff4646;"></td>
                 </tr>
             </table>
             <?php
