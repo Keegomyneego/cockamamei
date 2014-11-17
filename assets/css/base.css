@@ -48,3 +48,7 @@ h1 {
 ul {
     list-style: decimal inside;
 }
+
+img {
+    width: 100%;
+}

@@ -9,4 +9,11 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
 <body ng-controller="BodyCtrl as Body">
-<img src="assets/images/cockamamie_logo.png" alt="Cockamamie">
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <img src="/<?php echo __PROJECT_NAME; ?>/assets/images/cockamamie_logo.png" alt="Cockamamie">
+        </div>
+    </div>
+</div>
