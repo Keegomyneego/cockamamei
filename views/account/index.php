@@ -1,5 +1,11 @@
 <?php include 'views/partials/header.php'; ?>
 
+<style>
+td {
+    width: 20%;
+}
+</style>
+
 <div class="container">
     <div class="row" >
         <div class="col-xs-10">
@@ -29,37 +35,147 @@
         </div>
         <div class="col-xs-9">
             <h1>Week View</h1>
+            <table style="width: 100%;">
+                <tr>
+                    <td style="width: 20%;">
+                        <h4>Sun, Nov. 16, 2014</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Keegan</td>
+                    <td>Bryant</td>
+                    <td>Hamzah</td>
+                    <td>Chau</td>
+                </tr>
+                <tr>
+                    <td>06:00:00 AM</td>
+                    <td style="background: darkred;"></td>
+                    <td style="background: forestgreen;"></td>
+                    <td style="background: darkred;"></td>
+                    <td style="background: forestgreen;"></td>
+                </tr>
+                <tr>
+                    <td>07:00:00 AM</td>
+                    <td style="background: darkred;"></td>
+                    <td style="background: darkred;"></td>
+                    <td style="background: forestgreen;"></td>
+                    <td style="background: darkred;"></td>
+                </tr>
+                <tr>
+                    <td>08:00:00 AM</td>
+                    <td style="background: darkred;"></td>
+                    <td style="background: forestgreen;"></td>
+                    <td style="background: forestgreen;"></td>
+                    <td style="background: darkred;"></td>
+                </tr>
+                <tr>
+                    <td>09:00:00 AM</td>
+                    <td style="background: darkred;"></td>
+                    <td style="background: forestgreen;"></td>
+                    <td style="background: forestgreen;"></td>
+                    <td style="background: forestgreen;"></td>
+                </tr>
+                <tr>
+                    <td>10:00:00 AM</td>
+                    <td style="background: forestgreen;"></td>
+                    <td style="background: darkred;"></td>
+                    <td style="background: forestgreen;"></td>
+                    <td style="background: darkred;"></td>
+                </tr>
+                <tr>
+                    <td>11:00:00 AM</td>
+                    <td style="background: forestgreen;"></td>
+                    <td style="background: forestgreen;"></td>
+                    <td style="background: forestgreen;"></td>
+                    <td style="background: forestgreen;"></td>
+                </tr>
+                <tr>
+                    <td>12:00:00 PM</td>
+                    <td style="background: darkred;"></td>
+                    <td style="background: forestgreen;"></td>
+                    <td style="background: darkred;"></td>
+                    <td style="background: forestgreen;"></td>
+                </tr>
+                <tr>
+                    <td>01:00:00 PM</td>
+                    <td style="background: darkred;"></td>
+                    <td style="background: forestgreen;"></td>
+                    <td style="background: forestgreen;"></td>
+                    <td style="background: darkred;"></td>
+                </tr>
+                <tr>
+                    <td>02:00:00 PM</td>
+                    <td style="background: forestgreen;"></td>
+                    <td style="background: forestgreen;"></td>
+                    <td style="background: darkred;"></td>
+                    <td style="background: forestgreen;"></td>
+                </tr>
+                <tr>
+                    <td>03:00:00 PM</td>
+                    <td style="background: darkred;"></td>
+                    <td style="background: darkred;"></td>
+                    <td style="background: forestgreen;"></td>
+                    <td style="background: darkred;"></td>
+                </tr>
+                <tr>
+                    <td>04:00:00 PM</td>
+                    <td style="background: darkred;"></td>
+                    <td style="background: darkred;"></td>
+                    <td style="background: forestgreen;"></td>
+                    <td style="background: darkred;"></td>
+                </tr>
+                <tr>
+                    <td>05:00:00 PM</td>
+                    <td style="background: darkred;"></td>
+                    <td style="background: forestgreen;"></td>
+                    <td style="background: darkred;"></td>
+                    <td style="background: darkred;"></td>
+                </tr>
+                <tr>
+                    <td>06:00:00 PM</td>
+                    <td style="background: darkred;"></td>
+                    <td style="background: darkred;"></td>
+                    <td style="background: darkred;"></td>
+                    <td style="background: darkred;"></td>
+                </tr>
+            </table>
             <?php
-            for($i = 0; $i < 7; $i++)
+            for($i = 0; $i < 6; $i++)
             {
             ?>
-                <div>
+                <?php
+                $now = new DateTime('now');
+                $now->modify('+' . $i . ' day');
+                ?>
+                <table style="width: 100%;">
+                    <tr>
+                        <td style="width: 20%;">
+                            <h4><?php echo $now->format('D, M. d, Y'); ?></h4>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Keegan</td>
+                        <td>Bryant</td>
+                        <td>Hamzah</td>
+                        <td>Chau</td>
+                    </tr>
                     <?php
-                    $now = new DateTime('now');
-                    $now->modify('+' . $i . ' day');
+                    for($j = 0; $j < 12; $j++)
+                    {
+                        $startTime = new DateTime('6:00:00 AM');
+                        $startTime->modify('+' . $j . ' hour');
                     ?>
-                        <table>
-                            <tr>
-                                <th>
-                                    <h4 class="center"><?php echo $now->format('D, M. d, Y'); ?></h4>
-                                </th>
-                            </tr>
-                            <?php
-                            for($j = 0; $j < 12; $j++)
-                            {
-                                $startTime = new DateTime('6:00:00 AM');
-                                $startTime->modify('+' . $j . ' hour');
-                            ?>
-                                <tr>
-                                    <td>
-                                        <?php echo $startTime->format('h:i:s A'); ?>
-                                    </td>
-                                </tr>
-                            <?php
-                            }
-                            ?>
-                        </table>
-                </div>
+                        <tr>
+                            <td>
+                                <?php echo $startTime->format('h:i:s A'); ?>
+                            </td>
+                        </tr>
+                    <?php
+                    }
+                    ?>
+                </table>
             <?php
             }
             ?>
