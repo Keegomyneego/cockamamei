@@ -1,6 +1,9 @@
 <?php include 'views/partials/header.php'; ?>
 
 <style>
+table{
+    width: 100%;
+}
 td {
     width: 20%;
 }
@@ -35,9 +38,9 @@ td {
         </div>
         <div class="col-xs-9">
             <h1>Week View</h1>
-            <table style="width: 100%;">
+            <table>
                 <tr>
-                    <td style="width: 20%;">
+                    <td>
                         <h4>Sun, Nov. 16, 2014</h4>
                     </td>
                 </tr>
@@ -148,9 +151,9 @@ td {
                 $now = new DateTime('now');
                 $now->modify('+' . $i . ' day');
                 ?>
-                <table style="width: 100%;">
+                <table>
                     <tr>
-                        <td style="width: 20%;">
+                        <td>
                             <h4><?php echo $now->format('D, M. d, Y'); ?></h4>
                         </td>
                     </tr>
