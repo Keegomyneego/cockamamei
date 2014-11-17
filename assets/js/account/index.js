@@ -11,7 +11,7 @@
     }]);
 
     function notify() {
-        window.open("../comm/notify", "_blank", "toolbar=yes, scrollbars=yes, resizable=yes, top=500, left=500, width=400, height=400");
+        window.open("../comm/notify", "_blank", "toolbar=yes, scrollbars=yes, resizable=yes, top=200, left=200, width=400, height=400");
     }
 })();
 
