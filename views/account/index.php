@@ -87,7 +87,7 @@ td {
                     <td style="background: darkred;"></td>
                 </tr>
                 <tr>
-                    <td style="background: lime;">11:00:00 AM</td>
+                    <td style="border: 2px solid gold;">11:00:00 AM</td>
                     <td style="background: forestgreen;"></td>
                     <td style="background: forestgreen;"></td>
                     <td style="background: forestgreen;"></td>
