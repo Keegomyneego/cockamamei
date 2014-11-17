@@ -157,27 +157,6 @@ td {
                             <h4><?php echo $now->format('D, M. d, Y'); ?></h4>
                         </td>
                     </tr>
-                    <tr>
-                        <td></td>
-                        <td>Keegan</td>
-                        <td>Bryant</td>
-                        <td>Hamzah</td>
-                        <td>Chau</td>
-                    </tr>
-                    <?php
-                    for($j = 0; $j < 12; $j++)
-                    {
-                        $startTime = new DateTime('6:00:00 AM');
-                        $startTime->modify('+' . $j . ' hour');
-                    ?>
-                        <tr>
-                            <td>
-                                <?php echo $startTime->format('h:i:s A'); ?>
-                            </td>
-                        </tr>
-                    <?php
-                    }
-                    ?>
                 </table>
             <?php
             }
