@@ -159,10 +159,10 @@ td {
                     </tr>
                     <tr>
                         <td></td>
-                        <td>Keegan</td>
-                        <td>Bryant</td>
-                        <td>Hamzah</td>
-                        <td>Chau</td>
+                        <td class="user">Keegan</td>
+                        <td class="user">Bryant</td>
+                        <td class="user">Hamzah</td>
+                        <td class="user">Chau</td>
                     </tr>
                     <?php
                     for($j = 0; $j < 12; $j++)
