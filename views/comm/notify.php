@@ -1,14 +1,31 @@
-<?php include 'views/partials/header.php' ?>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
 
 <form>
-    <label>Invite to meeting:</label><textarea> Bryant, Hamzah, Chau, Keegan </textarea>
+    <label>Invite to meeting:</label>
+    <br/>
+    <textarea> Bryant, Hamzah, Chau, Keegan </textarea>
 
-    <label>Meeting Location:</label><textarea> BLD 070 </textarea>
+    <br/>
+    <label>Meeting Location:</label>
+    <br/>
+    <textarea> BLD 070 </textarea>
 
-    <label>Custom Message:</label><textarea> </textarea>
+    <br/>
+    <label>Custom Message:</label>
+    <br/>
+    <textarea> </textarea>
 
-    <button type=button" onclick="window.close(); alert("email sent")">Send</button>
+    <br/>
+    <button type="button" onclick="alert('email sent'); window.close(); ">Send</button>
 </form>
 
-
 <?php include 'views/partials/footer.php' ?>
+
+
+
