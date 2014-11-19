@@ -52,3 +52,37 @@ ul {
 img {
     width: 100%;
 }
+
+
+#weekview-container {
+    text-align: center;
+    height: 100%;
+}
+
+#weekview-container div {
+    /* aesthetics */
+    background-color: lightgrey;
+    cursor: pointer;
+    /* formatting */
+    display: inline-block;
+    vertical-align: middle;
+    overflow: visible !important;
+    /* location */
+    height: 15em;
+    width: 15em;
+    margin: 20em 5em;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#weekview-container div.large {
+    /* location */
+    height: 20em;
+    width: 20em;
+    margin: 15em 5em;
+}
