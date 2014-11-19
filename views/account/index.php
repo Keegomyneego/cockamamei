@@ -29,7 +29,7 @@ td {
     </div>
     <div class="row">
         <div class="col-xs-3">
-            <h1>Events</h1>
+            <h1>Meetings</h1>
             <ul>
                 <li>Meeting with Cockamamei</li>
                 <li>Finalize design</li>
@@ -37,7 +37,7 @@ td {
             </ul>
         </div>
         <div class="col-xs-9">
-            <h1>Week View</h1>
+            <h1>Week View/<span style="color: #cccccc; font-size: 14pt;">Meeting with Cockamamei</span></h1>
             <table>
                 <tr>
                     <td>
