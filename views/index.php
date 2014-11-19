@@ -3,6 +3,8 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-4 col-xs-offset-4">
+            <img src="/<?php echo __PROJECT_NAME; ?>/assets/images/cockamamie_logo.png" alt="Cockamamie">
+            
             <section ng-controller="SignUpFormCtrl as SignUpForm" ng-show="Body.is('signup')">
                 <h1>Sign Up</h1>
                 <form

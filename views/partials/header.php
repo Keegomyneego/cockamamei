@@ -10,10 +10,3 @@
 </head>
 <body ng-controller="BodyCtrl as Body">
 
-<div class="container">
-    <div class="row">
-        <div class="col-xs-12">
-            <img src="/<?php echo __PROJECT_NAME; ?>/assets/images/cockamamie_logo.png" alt="Cockamamie">
-        </div>
-    </div>
-</div>
