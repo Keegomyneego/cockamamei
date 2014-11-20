@@ -3,9 +3,14 @@
 $sitePath = realpath(dirname(__FILE__));
 define('__SITE_PATH', $sitePath);
 
-$parts = explode("/", dirname(__FILE__));
+if (strpos(dirname(__FILE__), "/") === false) {
+  $parts = explode("\\", dirname(__FILE__));
+} else {
+  $parts = explode("/", dirname(__FILE__));
+}
 define("__PROJECT_NAME", $parts[count($parts) - 1]);
 
+echo (strpos(dirname(__FILE__), "/") === false);
 require_once 'application/BaseController.php';
 require_once 'application/BaseDataAccess.php';
 require_once 'application/Config.php';
