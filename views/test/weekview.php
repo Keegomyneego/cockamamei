@@ -14,8 +14,11 @@ include '../partials/header.php';
     <div>Friday</div>
 </div>
 
+<script type="text/javascript" src="../../assets/js/test/weekview.js"></script>
+
 <?php
 // include 'views/partials/footer.php';
 
 /* Work around while Router isn't working */
-include '../partials/footer.php'; ?>
+include '../partials/footer.php';
+?>
