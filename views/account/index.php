@@ -1,9 +1,9 @@
 <?php 
-// include 'views/partials/header.php';
+include 'views/partials/header.php';
 
 /* Work around while Router isn't working */
-define("__PROJECT_NAME", "cockamamei");
-include '../partials/header.php';
+// define("__PROJECT_NAME", "cockamamei");
+// include '../partials/header.php';
 ?>
 
 <style>
@@ -172,8 +172,8 @@ td {
 </div>
 
 <?php
-// include 'views/partials/footer.php';
+include 'views/partials/footer.php';
 
 /* Work around while Router isn't working */
-include '../partials/footer.php';
+// include '../partials/footer.php';
 ?>
