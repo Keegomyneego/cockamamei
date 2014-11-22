@@ -1,4 +1,4 @@
-(function () {
+$(document).ready(function () {
   window.weekview = {};
 
   /* generate week view */
