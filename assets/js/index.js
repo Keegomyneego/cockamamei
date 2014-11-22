@@ -76,7 +76,7 @@
             {
                 $http({
                     method: 'POST',
-                    url: 'account/login',
+                    url: '/' + projectName + '/account/login',
                     data: $.param({
                         email: current.email,
                         password: current.password

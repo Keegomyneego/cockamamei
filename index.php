@@ -10,7 +10,6 @@ if (strpos(dirname(__FILE__), "/") === false) {
 }
 define("__PROJECT_NAME", $parts[count($parts) - 1]);
 
-echo (strpos(dirname(__FILE__), "/") === false);
 require_once 'application/BaseController.php';
 require_once 'application/BaseDataAccess.php';
 require_once 'application/Config.php';
