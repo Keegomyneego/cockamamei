@@ -42,7 +42,6 @@ class Router
 
         if(is_readable($this->file))
         {
-        print($this->file);
             include_once $this->file;
 
             $class = $this->controller.'Controller';
