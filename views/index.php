@@ -1,10 +1,4 @@
-<?php 
-// include 'views/partials/header.php';
-
-/* Work around while Router isn't working */
-define("__PROJECT_NAME", "cockamamei");
-include 'partials/header.php';
-?>
+<?php  include 'views/partials/header.php'; ?>
 
 <div class="header">
     <img src="/<?php echo __PROJECT_NAME; ?>/assets/images/cockamamie_logo.png" alt="Cockamamie">

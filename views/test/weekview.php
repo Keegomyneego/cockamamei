@@ -27,6 +27,4 @@
     </div>
 </div>
 
-<script type="text/javascript" src="../../assets/js/test/weekview.js"></script>
-
 <?php include 'views/partials/footer.php'; ?>
