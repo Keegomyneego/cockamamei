@@ -1,4 +1,10 @@
-<?php include 'views/partials/header.php'; ?>
+<?php 
+// include 'views/partials/header.php';
+
+/* Work around while Router isn't working */
+define("__PROJECT_NAME", "cockamamei");
+include 'partials/header.php';
+?>
 
 <div class="container">
     <div class="row">
@@ -96,4 +102,9 @@
     </div>
 </div>
 
-<?php include 'views/partials/footer.php'; ?>
+<?php
+// include 'views/partials/footer.php';
+
+/* Work around while Router isn't working */
+include 'partials/footer.php';
+?>
