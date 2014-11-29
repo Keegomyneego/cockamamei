@@ -30,8 +30,8 @@ function __autoload($className)
         include_once $file;
     }
 }
-
-$db = DB::getInstance();
+// Database causing errors, we're going front end only from this point on
+//$db = DB::getInstance();
 $router = new Router(new Template());
 $router->setPath('controllers');
 $router->loader();

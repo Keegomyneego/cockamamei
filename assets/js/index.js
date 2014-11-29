@@ -3,6 +3,7 @@
     var projectName = currentPathParts[1];
     var C = angular.module(projectName, ['pwCheck']);
     var D = angular.module('pwCheck', []);
+    var useDB = false;
 
     C.controller('BodyCtrl', [function() {
         var current = this;
@@ -29,29 +30,33 @@
         {
             if(isValid)
             {
-                $http({
-                    method: 'POST',
-                    url: 'account/create',
-                    data: $.param({
-                        firstname: current.firstname,
-                        lastname: current.lastname,
-                        email: current.email,
-                        password: current.password,
-                        passwordConfirm: current.passwordConfirm
-                    }),
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded'
-                    }
-                }).success(function(data) {
-                    if(1 == data)
-                    {
-                        window.location = 'account/index';
-                    }
-                    else
-                    {
-                        alert('Error');
-                    }
-                });
+                if (useDB) {
+                    $http({
+                        method: 'POST',
+                        url: 'account/create',
+                        data: $.param({
+                            firstname: current.firstname,
+                            lastname: current.lastname,
+                            email: current.email,
+                            password: current.password,
+                            passwordConfirm: current.passwordConfirm
+                        }),
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded'
+                        }
+                    }).success(function(data) {
+                        if(1 == data)
+                        {
+                            window.location = 'account/index';
+                        }
+                        else
+                        {
+                            alert('Error');
+                        }
+                    });
+                } else {
+                    window.location = 'account/index';
+                }
             }
         }
 
@@ -74,26 +79,30 @@
         {
             if(isValid)
             {
-                $http({
-                    method: 'POST',
-                    url: '/' + projectName + '/account/login',
-                    data: $.param({
-                        email: current.email,
-                        password: current.password
-                    }),
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded'
-                    }
-                }).success(function(data) {
-                    if(1 == data)
-                    {
-                        window.location = 'account/index';
-                    }
-                    else
-                    {
-                        alert('Invalid email and password combination');
-                    }
-                });
+                if (useDB) {
+                    $http({
+                        method: 'POST',
+                        url: '/' + projectName + '/index.php?rt=/account/login',
+                        data: $.param({
+                            email: current.email,
+                            password: current.password
+                        }),
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded'
+                        }
+                    }).success(function(data) {
+                        if(1 == data)
+                        {
+                            window.location = 'account/index';
+                        }
+                        else
+                        {
+                            alert('Invalid email and password combination');
+                        }
+                    });
+                } else {
+                    window.location = 'test/index';
+                }
             }
         }
 
