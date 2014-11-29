@@ -1,10 +1,4 @@
-<?php 
-// include 'views/partials/header.php';
-
-/* Work around while Router isn't working */
-define("__PROJECT_NAME", "cockamamei");
-include '../partials/header.php';
-?>
+<?php include 'views/partials/header.php'; ?>
 
 <div id="meetings">
   <h1>Meetings</h1>
@@ -35,9 +29,4 @@ include '../partials/header.php';
 
 <script type="text/javascript" src="../../assets/js/test/weekview.js"></script>
 
-<?php
-// include 'views/partials/footer.php';
-
-/* Work around while Router isn't working */
-include '../partials/footer.php';
-?>
+<?php include 'views/partials/footer.php'; ?>
