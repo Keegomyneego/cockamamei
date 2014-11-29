@@ -6,11 +6,13 @@ define("__PROJECT_NAME", "cockamamei");
 include 'partials/header.php';
 ?>
 
+<div class="header">
+    <img src="/<?php echo __PROJECT_NAME; ?>/assets/images/cockamamie_logo.png" alt="Cockamamie">
+</div>
+
 <div class="container">
     <div class="row">
         <div class="col-xs-4 col-xs-offset-4">
-            <img src="/<?php echo __PROJECT_NAME; ?>/assets/images/cockamamie_logo.png" alt="Cockamamie">
-            
             <section ng-controller="SignUpFormCtrl as SignUpForm" ng-show="Body.is('signup')">
                 <h1>Sign Up</h1>
                 <form
@@ -19,52 +21,52 @@ include 'partials/header.php';
                     autocomplete="off"
                     novalidate>
 
-                    <label for="firstname">First Name</label>
                     <input
                         type="text" id="firstname" name="firstname"
+                        placeholder="First Name" class="form-control form-group"
                         ng-model="SignUpForm.firstname"
                         ng-pattern="SignUpForm.nameRegex"
                         ng-minlength="2"
                         ng-maxlength="31"
                         required/>
 
-                    <label for="lastname">Last Name</label>
                     <input
                         type="text" id="lastname" name="lastname"
+                        placeholder="Last Name" class="form-control form-group"
                         ng-model="SignUpForm.lastname"
                         ng-pattern="SignUpForm.nameRegex"
                         ng-minlength="2"
                         ng-maxlength="31"
                         required/>
 
-                    <label for="email">Email</label>
                     <input
                         type="text" id="email" name="email"
+                        placeholder="Email" class="form-control form-group"
                         ng-model="SignUpForm.email"
                         ng-pattern="SignUpForm.emailRegex"
                         required/>
 
-                    <label for="password">Password</label>
                     <input
                         type="password" id="password" name="password"
+                        placeholder="Password" class="form-control form-group"
                         ng-model="SignUpForm.password"
                         ng-minlength="4"
                         ng-maxlength="31"
                         required/>
 
-                    <label for="passwordConfirm">Password Confirm</label>
                     <input
                         type="password" id="passwordConfirm" name="passwordConfirm"
+                        placeholder="Confirm Password" class="form-control form-group"
                         pw-check="password"
                         ng-model="SignUpForm.passwordConfirm"
                         ng-minlength="4"
                         ng-maxlength="31"
                         required/>
 
-                    <button type="submit" class="md success button" ng-disabled="signUpForm.$invalid">Sign Up</button>
+                    <button type="submit" class="btn btn-default" ng-disabled="signUpForm.$invalid">Sign Up</button>
                     or <a href="#" class="action" ng-click="Body.toggleSection('login', $event)">Login</a>
 
-                    <button type="reset" class="right md alert button" ng-click="SignUpForm.erase()">Clear</button>
+                    <button type="reset" class="btn btn-danger" ng-click="SignUpForm.erase()">Clear</button>
                 </form>
             </section>
 
@@ -77,25 +79,25 @@ include 'partials/header.php';
                     autocomplete="off"
                     novalidate>
 
-                    <label for="email">Email</label>
                     <input
                         type="text" id="email" name="email"
+                        placeholder="Email" class="form-control form-group"
                         ng-model="LoginForm.email"
                         ng-pattern="LoginForm.emailRegex"
                         required/>
 
-                    <label for="password">Password</label>
                     <input
                         type="password" id="password" name="password"
+                        placeholder="Password" class="form-control form-group"
                         ng-model="LoginForm.password"
                         ng-minlength="4"
                         ng-maxlength="31"
                         required/>
 
-                    <button type="submit" class="md success button" ng-disabled="loginForm.$invalid">Login</button>
+                    <button type="submit" class="btn btn-default" ng-disabled="loginForm.$invalid">Login</button>
                     or <a href="#" class="action" ng-click="Body.toggleSection('signup', $event)">Sign Up</a>
 
-                    <button type="reset" class="right md alert button" ng-click="LoginForm.erase()">Clear</button>
+                    <button type="reset" class="btn btn-danger" ng-click="LoginForm.erase()">Clear</button>
                 </form>
             </section>
         </div>

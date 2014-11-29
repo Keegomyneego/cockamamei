@@ -3,6 +3,7 @@
 <head>
     <title><?php echo !empty($title) ? $title : __PROJECT_NAME; ?></title>
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="/<?php echo __PROJECT_NAME; ?>/assets/css/app.css">
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script>

@@ -23,6 +23,7 @@ html {
 body {
     /*padding-top: 100px;*/
     overflow: hidden;
+    background: #FBFBFB;
 }
 
 a {
@@ -32,7 +33,6 @@ a {
 
 a.action {
     font-size: 10pt;
-    text-transform: uppercase;
 }
 
 a.action:hover {
@@ -62,6 +62,16 @@ ul {
 
 img {
     width: 100%;
+}
+
+.header {
+    background-color: #33CCFF;
+    text-align: center;
+}
+
+.header img {
+    height: 180px;
+    width: auto;
 }
 
 #meetings {
