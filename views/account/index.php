@@ -1,4 +1,4 @@
-<?php  include 'views/partials/header.php'; ?>
+<?php include 'views/partials/header.php'; ?>
 
 <style>
 table{
