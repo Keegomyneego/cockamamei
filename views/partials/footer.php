@@ -4,7 +4,7 @@
 <?php
 if(isset($_SERVER['REDIRECT_URL']) || substr($_SERVER['QUERY_STRING'], 0, 3) == "rt=")
 {
-    $pathParts = explode('/', $_SERVER['REDIRECT_URL']);
+    $pathParts = explode('/', $_SERVER['REQUEST_URI']);
     $controller = $pathParts[2];
     $action = $pathParts[3];
     $jsFile = '/' . __PROJECT_NAME . '/assets/js/' . $controller . '/' . (($action) ? $action : 'index') . '.js';
