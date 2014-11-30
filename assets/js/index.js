@@ -55,7 +55,7 @@
                         }
                     });
                 } else {
-                    window.location = 'app';
+                    window.location = 'app/weekview';
                 }
             }
         }
@@ -101,7 +101,7 @@
                         }
                     });
                 } else {
-                    window.location = 'app';
+                    window.location = 'app/weekview';
                 }
             }
         }
