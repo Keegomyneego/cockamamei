@@ -1,20 +1,38 @@
-#meetings {
-    margin: 5em 0em 2em 10em;
+.clickable {
+    cursor: pointer;
+}
+
+#events {
+    position: relative;
+    top: 5em;
+    left: 10em;
+    padding: 5px;
     background-color: hsl(0, 0%, 95%);
     width: 32em;
 }
 
-#meetings h1 {
+#events h1 {
     text-align: center;
 }
-#meetings ol {
-    padding: 0.5em 2em 1.5em 3em;
+
+#events ul,
+#events ol {
+    padding: 0.5em 2em;
+    list-style-type: none;
+}
+
+#events li:before {
+    content: "\0BB \020";
+    font-size: large;
+    font-family: Copperplate Gothic Bold, sans-serif;
 }
 
 #weekview-container {
+    position: relative;
+    top: 22em;
+    transform: translateY(-50%);
     white-space: nowrap;
     text-align: center;
-    height: 30em;
 }
 
 #weekview-container > div {
@@ -23,11 +41,12 @@
     /* formatting */
     display: inline-block;
     vertical-align: middle;
-    overflow: visible !important;
+    text-align: center;
     /* location */
     height: 15em;
     width: 15em;
-    margin: 5em 1em;
+    margin: 5em 0em;
+    padding: 1em;
 
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -37,30 +56,44 @@
     user-select: none;
 }
 
-#weekview-container h1 {
-    cursor: pointer;
-}
-
-#weekview-container h1.hover {
+.clickable:hover,
+.clickable:hover h1 {
     color: hsl(0, 0%, 60%);
 }
 
-#weekview-container table {
-    display: none;
+#weekview-container h1 {
+    margin: 0px 0px 12px 0px;
+}
+
+#weekview-container > div > div {
+    width: 36em !important;
+}
+
+#weekview-container > div > div > table {
+    border-spacing: 1px;
+    border-collapse: separate;
     table-layout: fixed;
     width: 36em;
     margin: auto;
 }
 
-#weekview-container > div.large {
-    /* location */
-    height: 30em;
-    width: 40em;
-    margin: 0em 1em;
+#weekview-container > div.small {
+    width: 13em;
 }
 
-#weekview-container > div.large table {
-    display: table;
+#weekview-container > div.small h1 {
+    font-size: large;
+}
+
+#weekview-container > div.large {
+    height: auto;
+    width: 40em;
+    margin: 0em;
+    padding: 2em;
+}
+
+#weekview-container > div.large h1 {
+    font-size: xx-large;
 }
 
 #weekview-container > div.large table th {
@@ -72,7 +105,6 @@
 #weekview-container > div.large table td.timeslot {
     position: relative;
     height: 22px;
-    top: 10px;
     cursor: pointer;
 }
 

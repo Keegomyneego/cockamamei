@@ -1,78 +1,115 @@
+/* globals $,document,console */
 $(document).ready(function () {
-  window.weekview = {};
+	'use strict';
+	window.weekview = {};
 
-  /* generate week view */
-  var $genericTable = $(
-    '<table>' +
-      '<thead>' +
-        '<tr>' +
-          '<th></th>' +
-          '<td>Bryant</td>' +
-          '<td>Chau</td>' +
-          '<td>Hamzah</td>' +
-          '<td>Keegan</td>' +
-        '</tr>' +
-      '</thead>' +
-    '</table>');
+	/* Table with header and no body */
+	var $genericTable = $(
+		'<table>' +
+			'<thead>' +
+				'<tr>' +
+					'<th></th>' +
+					'<td>Bryant</td>' +
+					'<td>Chau</td>' +
+					'<td>Hamzah</td>' +
+					'<td>Keegan</td>' +
+				'</tr>' +
+			'</thead>' +
+		'</table>');
 
-  function generateTbody(startTime, endTime, columns) {
-    var $tbody = $('<tbody></tbody>');
-    var $genericRow = $('<tr></tr>');
-    $genericRow.append('<th></th>');
-    for (var col = 0; col < columns; col++) {
-      $genericRow.append('<td class="timeslot busy"></td>')
-    }
+	/**
+	 * Generate all the timeslots for a day based on start/end time
+	 * and the number of columns requested.
+	 */
+	function generateTbody(startTime, endTime, columns) {
+		var $tbody = $(document.createElement('tbody'));
+		var $genericRow = $(document.createElement('tr'));
+		$genericRow.append(document.createElement('th'));
+		for (var col = 0; col < columns; col++) {
+			$genericRow.append('<td class="timeslot busy"></td>');
+		}
 
-    for (var time = startTime; time <= endTime; time++) {
-      var $row = $genericRow.clone();
-      $row.children("th").html(time + ":00");
-      if (time == endTime) {
-        $row.children("td").remove();
-      }
-      $tbody.append($row);
-    }
+		for (var time = startTime; time <= endTime; time++) {
+			var $row = $genericRow.clone();
+			$row.children('th').html(time + ':00');
+			$tbody.append($row);
+		}
 
-    return $tbody;
-  }
+		return $tbody;
+	}
 
-  $genericTable.append(generateTbody(6, 20, 4));
+	$genericTable.append(generateTbody(6, 20, 4));
 
-  $('#weekview-container div').append($genericTable.clone());
+	$('#weekview-container div').append(document.createElement('div'));
+	$('#weekview-container div div').append($genericTable.clone());
+	$('#weekview-container div div').hide();
 
-  /* set up event handlers and animations */
-  $('#weekview-container div h1').on('mousedown', function () {
-    $div = $(this).parent();
-    if ($div.hasClass('large')) {
-      $div.children('table').fadeOut(250, function () {
-        $div.removeClass('large', 200);
-      });
-    } else {
-      $div.addClass('large', 250, function () {
-        $div.children('table').fadeIn(200);
-      });
-    }
-  });
+	/**
+	 * Set up event handlers and animations.
+	 */
+	(function () {
 
-  $('#weekview-container div h1').hover(function () {
-    $(this).toggleClass("hover", 100);
-  });
+		/* enlarge a day view */
+		$('#weekview-container > div').on('mousedown', function () {
+			var $div = $(this);
+			if (!$div.hasClass('large')) {
+				$div.siblings(':not(.large)').addClass('small', 250);
+				$div.removeClass('small');
+				$div.addClass('large', 250, function () {
+					$div.children('div').show(500);
+				});
 
-  $('#weekview-container .timeslot').on("mousedown", function () {
-    window.weekview.mousedown = true;
-    $(this).trigger("mouseenter");
-  });
+				$div.removeClass('clickable');
+				$div.children('h1').addClass('clickable');
+			}
+		});
 
-  $('body').on("mouseup", function () {
-    window.weekview.mousedown = false;
-  });
+		/* shrink a day view */
+		$('#weekview-container div h1').on('mousedown', function () {
+			var $div = $(this).parent();
+			if ($div.hasClass('large')) {
+				$div.children('div').hide(500, function () {
+					if (!$div.siblings().hasClass('large')) {
+						$div.parent().children().removeClass('small', 250);
+					}
+					$div.removeClass('large', 250);
+				});
 
-  $('#weekview-container .timeslot').on("mouseenter", function () {
-    if (window.weekview.mousedown) {
-      if ($(this).hasClass('busy')) {
-        $(this).switchClass("busy", "free", 100);
-      } else {
-        $(this).switchClass("free", "busy", 100);
-      }
-    }
-  });
+				$div.children('h1').removeClass('clickable');
+				$div.addClass('clickable');
+			}
+		});
+
+		/* prevent right-click menu */
+		$('#weekview-container > div').on('contextmenu', function () {
+			return false;
+		});
+
+		/* enter timeslot edit mode */
+		$('#weekview-container .timeslot').on('mousedown', function (e) {
+			if (e.which === 1) {
+				window.weekview.buttonClicked = 'left';
+			} else if (e.which === 3) {
+				window.weekview.buttonClicked = 'right';
+			}
+			window.weekview.mousedown = true;
+			$(this).trigger('mouseenter');
+		});
+
+		/* leave timeslot edit mode */
+		$('body').on('mouseup', function () {
+			window.weekview.mousedown = false;
+		});
+
+		/* modify timeslots when in edit mode */
+		$('#weekview-container .timeslot').on('mouseenter', function () {
+			if (window.weekview.mousedown) {
+				if (window.weekview.buttonClicked == 'left') {
+					$(this).switchClass('busy', 'free', 100);
+				} else {
+					$(this).switchClass('free', 'busy', 100);
+				}
+			}
+		});
+	}());
 });
