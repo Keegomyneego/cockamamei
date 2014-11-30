@@ -1,0 +1,85 @@
+#meetings {
+    margin: 5em 0em 2em 10em;
+    background-color: hsl(0, 0%, 95%);
+    width: 32em;
+}
+
+#meetings h1 {
+    text-align: center;
+}
+#meetings ol {
+    padding: 0.5em 2em 1.5em 3em;
+}
+
+#weekview-container {
+    white-space: nowrap;
+    text-align: center;
+    height: 30em;
+}
+
+#weekview-container > div {
+    /* aesthetics */
+    background-color: hsl(0, 0%, 95%);
+    /* formatting */
+    display: inline-block;
+    vertical-align: middle;
+    overflow: visible !important;
+    /* location */
+    height: 15em;
+    width: 15em;
+    margin: 5em 1em;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#weekview-container h1 {
+    cursor: pointer;
+}
+
+#weekview-container h1.hover {
+    color: hsl(0, 0%, 60%);
+}
+
+#weekview-container table {
+    display: none;
+    table-layout: fixed;
+    width: 36em;
+    margin: auto;
+}
+
+#weekview-container > div.large {
+    /* location */
+    height: 30em;
+    width: 40em;
+    margin: 0em 1em;
+}
+
+#weekview-container > div.large table {
+    display: table;
+}
+
+#weekview-container > div.large table th {
+    width: 3em;
+    padding-right: 0.5em; 
+    text-align: right;
+}
+
+#weekview-container > div.large table td.timeslot {
+    position: relative;
+    height: 22px;
+    top: 10px;
+    cursor: pointer;
+}
+
+#weekview-container > div.large table td.timeslot.busy {
+    background-color: hsl(0, 30%, 80%);
+}
+
+#weekview-container > div.large table td.timeslot.free {
+    background-color: hsl(120, 30%, 80%);
+}

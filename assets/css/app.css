@@ -4,6 +4,7 @@
 @import url('input/input.css');
 @import url('button/button.css');
 @import url('align/align.css');
+@import url('app/app.css');
 
 /* External Modules CSS */
 @import url('../modules/C3/c3.css');

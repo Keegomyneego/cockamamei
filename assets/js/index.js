@@ -55,7 +55,7 @@
                         }
                     });
                 } else {
-                    window.location = 'account/index';
+                    window.location = 'app';
                 }
             }
         }
@@ -101,7 +101,7 @@
                         }
                     });
                 } else {
-                    window.location = 'test/index';
+                    window.location = 'app';
                 }
             }
         }
