@@ -47,7 +47,6 @@ class Template
         else
         {
             throw new Exception('Template not found in '.$path);
-            return false;
         }
     }
 }
