@@ -10,7 +10,7 @@
       <a class="clickable" id="switch-mode">View Group Availability</a>
     </li>
     <li>
-      <a class="clickable" href="/cockamamei">Switch User</a>
+      <a class="clickable" href="/Cockamamei">Switch User</a>
     </li>
     <li>
       <a class="clickable" id="help-toggle">Help</a>
