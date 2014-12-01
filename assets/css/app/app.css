@@ -7,7 +7,7 @@
 #help-menu {
     text-align: center;
     width: 12em !important;
-    right: 239px;
+    right: 92px;
     transform: translateX(50%);
 }
 
@@ -43,11 +43,11 @@
 #module-container > div {
     display: inline-block;
     vertical-align: middle;
-    margin-top: 2em;
+    margin-top: 30px;
     margin-bottom: 0em;
-    padding: 0.5em 2em;
+    padding: 10px 30px;
     background-color: hsl(0, 0%, 95%);
-    width: 32em;
+    width: auto;
 }
 
 #module-container > div h1 {
@@ -85,11 +85,16 @@
 
 #info-display h1 {
     font-weight: bold;
-    color: hsl(120, 25%, 50%);
+}
+
+#available-times {
+    position: absolute;
+    right: 186px;
 }
 
 .change-week {
     font-family: Consolas;
+    font-weight: bold;
     font-size: 48pt;
     color: hsl(0, 0%, 90%);
     text-align: center;

@@ -62,7 +62,7 @@
       });
       $('#weekview-container .day.large .timetable').find('thead, th, td').show();
       $('#weekview-container .edit-mode').switchClass('edit-mode', 'view-mode', 'slow');
-      $('#weekview-container .day.small').addClass('clickable');
+      $('#weekview-container .day:not(.large)').addClass('clickable');
       $('#weekview-container .day.large h1').addClass('clickable');
     }
 

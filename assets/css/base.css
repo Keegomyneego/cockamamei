@@ -59,6 +59,14 @@ img {
     width: 100%;
 }
 
+.good-news, .good-news * {
+    color: hsl(120, 25%, 50%);
+}
+
+.bad-news, .bad-news * {
+    color: hsl(0, 25%, 50%);
+}
+
 .noselect {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -88,7 +96,7 @@ img {
     position: absolute;
     line-height: 80px;
     top: 0px;
-    right: 0px;
+    right: 34px;
 }
 
 #main-nav a {

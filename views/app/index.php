@@ -10,10 +10,10 @@
       <a class="clickable" id="switch-mode">View Group Availability</a>
     </li>
     <li>
-      <a class="clickable" id="help-toggle">Help</a>
+      <a class="clickable" href="/cockamamei">Switch User</a>
     </li>
     <li>
-      <a class="clickable" href="/cockamamei">Switch User</a>
+      <a class="clickable" id="help-toggle">Help</a>
     </li>
   </ul>
 </div>
@@ -42,9 +42,14 @@
     </ul>
   </div>
 
-  <div id="info-display">
+  <div id="info-display" class="good-news">
     <h1>Getting Started</h1>
     <p>Go ahead and set what times you're free this week.</p>
+  </div>
+
+  <div id="available-times" class="bad-news">
+    <h1>Available Meeting Times</h1>
+    <p>No available times : (</p>
   </div>
 </div>
 
