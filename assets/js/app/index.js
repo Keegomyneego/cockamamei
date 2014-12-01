@@ -57,10 +57,22 @@ $(document).ready(function () {
 	 */
 	(function () {
 
-		/* add help menu dropdown functionality */
-		$('#help').on('click', function () {
-			$('#helpmenu').toggle();
-		});
+		function createDropDown(parent, menu) {
+			$(parent).on('click', function () {
+				var $menu = $(menu);
+				if (!$menu.is(':visible')) {
+					$menu.slideDown();
+				} else {
+					$menu.slideUp();
+				}
+			});
+		}
+
+		/* dropdown for help menu */
+		createDropDown('#help-toggle', '#help-menu ul');
+
+		/* dropdown for controls */
+		createDropDown('#show-controls', '#controls');
 
 		/* enlarge a day view */
 		$('#weekview-container .day').on('mousedown', function () {

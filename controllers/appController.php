@@ -3,12 +3,12 @@
 class appController extends BaseController 
 { 
   public function index() {
-    header('Location: /cockamamei/app/weekview');
+    $this->template->render('app/index');
   }
 
   public function weekview()
   {
-    $this->template->render('app/weekview');
+    header('Location: /cockamamei/app');
   }
 }
 
