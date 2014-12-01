@@ -64,38 +64,61 @@ $(document).ready(function () {
 
 		/* enlarge a day view */
 		$('#weekview-container .day').on('mousedown', function () {
-			var $div = $(this);
-			if (!$div.hasClass('large')) {
-				$div.siblings(':not(.large)')
+			var $day = $(this);
+			if (!$day.hasClass('large')) {
+				window.weekview.selectedDay = $day;
+
+				/* unenlarge other days */
+				$day.siblings('.large')
+				    .children('div').hide(500, function () {
+					$(this).parent().removeClass('large', 250);
+				});
+
+				/* unshrink self */
+				$day.removeClass('small', 250)
+				    .children('h1')
+				    .removeClass('small', 250);
+
+				/* enlarge self then show its timeslots */
+				$day.addClass('large', 250, function () {
+					$day.children('div')
+					    .show(500);
+				});
+
+				/* shrink all other days */
+				$day.siblings()
 				    .addClass('small', 250)
 				    .children('h1')
 				    .addClass('small', 250);
-				$div.removeClass('small');
-				$div.addClass('large', 250, function () {
-					$div.children('div').show(500);
-				});
 
-				$div.removeClass('clickable');
-				$div.children('h1').addClass('clickable');
+				/* switch self clickability from div to h1 */
+				$day.removeClass('clickable');
+				$day.children('h1')
+				    .addClass('clickable');
 			}
 		});
 
-		/* shrink a day view */
+		/* unenlarge a day view */
 		$('#weekview-container .day h1').on('mousedown', function () {
-			var $div = $(this).parent();
-			if ($div.hasClass('large')) {
-				$div.children('div').hide(500, function () {
-					if (!$div.siblings().hasClass('large')) {
-						$div.parent().children()
-						    .removeClass('small', 250)
-						    .children('h1')
-						    .removeClass('small', 250);
-					}
-					$div.removeClass('large', 250);
+			var $day = $(this).parent();
+			if ($day.hasClass('large')) {
+				window.weekview.selectedDay = null;
+
+				/* hide own timeslots */
+				$day.children('div').hide(500, function () {
+					/* unshrink all other days */
+					$day.siblings()
+					    .removeClass('small', 250)
+					    .children('h1')
+					    .removeClass('small', 250);
+
+					/* unenlarge self */
+					$day.removeClass('large', 250);
 				});
 
-				$div.children('h1').removeClass('clickable');
-				$div.addClass('clickable');
+				/* switch self clickability from h1 to div */
+				$day.children('h1').removeClass('clickable');
+				$day.addClass('clickable');
 			}
 		});
 
