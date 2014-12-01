@@ -14,7 +14,7 @@
   }
 
   window.app = {
-    editMode: false
+    editMode: true
   };
 
   var animationSpeeds = {
@@ -29,6 +29,17 @@
       }).fadeIn();
   }
 
+  function switchClickability($day) {
+    if ($day.hasClass('clickable')) {
+      $day.removeClass('clickable');
+      $day.children('h1')
+        .addClass('clickable');
+    } else {
+      $day.children('h1').removeClass('clickable');
+      $day.addClass('clickable');
+    }
+  }
+
   $('#switch-mode').on('click', function () {
     if (!window.app.editMode) {
       /* enter edit mode */
@@ -36,13 +47,23 @@
       switchText('#switch-mode', 'View Group Availability');
 
       $('#weekview-container .view-mode').switchClass('view-mode', 'edit-mode', 'slow');
+      $('#weekview-container').find('thead, th, td').hide();
+      $('#weekview-container').find('.day:first-of-type th').show();
+      $('#weekview-container').find('td:first-of-type').show();
       $('#weekview-container .timetable').show('slow');
+      $('#weekview-container .clickable').removeClass('clickable');
     } else {
       /* enter view mode */
 
       switchText('#switch-mode', 'Edit Availability');
 
+      $('#weekview-container .day:not(.large) .timetable').hide('slow', function () {
+        $('#weekview-container').find('thead, th, td').show();
+      });
+      $('#weekview-container .day.large .timetable').find('thead, th, td').show();
       $('#weekview-container .edit-mode').switchClass('edit-mode', 'view-mode', 'slow');
+      $('#weekview-container .day.small').addClass('clickable');
+      $('#weekview-container .day.large h1').addClass('clickable');
     }
 
     window.app.editMode = !window.app.editMode;
@@ -68,10 +89,10 @@
   /* enlarge a day view */
   $('#weekview-container .day').on('mousedown', function () {
     var $day = $(this);
-    if (!$day.hasClass('large')) {
+    if ($day.is(':not(.large).view-mode')) {
 
       /* unenlarge other days */
-      $day.siblings('.large')
+      $day.siblings('.large, .view-mode')
         .children('.timetable')
         .hide(animationSpeeds.timeTable, function () {
           $(this).parent()
@@ -95,16 +116,14 @@
         .addClass('small', animationSpeeds.day);
 
       /* switch self clickability from div to h1 */
-      $day.removeClass('clickable');
-      $day.children('h1')
-        .addClass('clickable');
+      switchClickability($day);
     }
   });
 
   /* unenlarge a day view */
   $('#weekview-container .day h1').on('mousedown', function () {
     var $day = $(this).parent();
-    if ($day.hasClass('large')) {
+    if ($day.is('.large.view-mode')) {
 
       /* hide own timeslots */
       $day.children('.timetable').hide(animationSpeeds.timeTable, function () {
@@ -116,11 +135,10 @@
 
         /* unenlarge self */
         $day.removeClass('large', animationSpeeds.day);
-      });
 
-      /* switch self clickability from h1 to div */
-      $day.children('h1').removeClass('clickable');
-      $day.addClass('clickable');
+        /* switch self clickability from h1 to div */
+        switchClickability($day);
+      });
     }
   });
 

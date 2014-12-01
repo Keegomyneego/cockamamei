@@ -7,7 +7,7 @@
 <div class="navmenu" id="main-nav">
   <ul>
     <li>
-      <a class="clickable" id="switch-mode">Edit Availability</a>
+      <a class="clickable" id="switch-mode">View Group Availability</a>
     </li>
     <li>
       <a class="clickable" id="help-toggle">Help</a>

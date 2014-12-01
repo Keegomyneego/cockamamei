@@ -1,11 +1,29 @@
 #weekview-container .day.edit-mode {
   margin-left: 0px;
   margin-right: 0px;
-  padding-left: 2px;
-  padding-right: 2px;
-  width: 7em;
+  padding: 30px 0px 30px 0px;
+  width: 80px;
+  height: auto;
+}
+
+#weekview-container .day.edit-mode:first-child {
+  padding-left: 30px;
+  width: 155px;
+}
+
+#weekview-container .day:first-child h1.edit-mode {
+  padding-left: 45px;
+}
+
+#weekview-container .day.edit-mode:last-child {
+  padding-right: 30px;
+  width: 110px;
 }
 
 #weekview-container h1.edit-mode {
   font-size: 14px;
+}
+
+#weekview-container .timetable.edit-mode {
+    width: 100% !important;
 }

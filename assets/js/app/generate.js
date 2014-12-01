@@ -50,14 +50,17 @@
   for (var i = 0; i < daysInWeek.length; i ++) {
     $week
       .append($(document.createElement('div'))
-        .addClass('day clickable noselect view-mode')
+        .addClass('day noselect edit-mode')
         .append($(document.createElement('h1'))
-          .addClass('view-mode')
+          .addClass('edit-mode')
           .text(daysInWeek[i]))
         .append($(document.createElement('div'))
-          .addClass('timetable')));
+          .addClass('timetable edit-mode')));
   }
 
   $('#weekview-container .timetable').append($genericTable.clone());
-  $('#weekview-container .timetable').hide();
+  $('#weekview-container').find('thead, th, td').hide();
+  $('#weekview-container').find('.day:first-of-type th').show();
+  $('#weekview-container').find('td:first-of-type').show();
+  $('#weekview-container .timetable').show();
 }());
