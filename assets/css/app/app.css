@@ -146,30 +146,8 @@
     padding: 1em;
 }
 
-#weekview-container h1 {
-    margin: 0px 0px 12px 0px;
-}
-
-#weekview-container .timetable {
-    position: relative;
-}
-
-#weekview-container .timetable td {
-    width: 78px !important;
-}
-
-#weekview-container .day table {
-    border-spacing: 1px;
-    border-collapse: separate;
-    table-layout: fixed;
-}
-
 #weekview-container .day.small {
     width: 13em;
-}
-
-#weekview-container h1.small {
-    font-size: large;
 }
 
 #weekview-container .day.large {
@@ -177,6 +155,31 @@
     width: auto;
     margin: 0em;
     padding: 30px;
+}
+
+#weekview-container h1 {
+    margin: 0px 0px 12px 0px;
+}
+
+#weekview-container h1.small {
+    font-size: large;
+}
+
+#weekview-container .timetable {
+    position: relative;
+}
+
+#weekview-container .timetable table {
+    border-collapse: separate;
+    border-spacing: 1px;
+}
+
+#weekview-container .timetable td {
+    width: 78px !important;
+}
+
+#weekview-container .timetable input[type='text'] {
+    width: inherit;
 }
 
 #weekview-container .day th {

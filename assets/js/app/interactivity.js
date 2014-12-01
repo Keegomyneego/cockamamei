@@ -179,13 +179,29 @@
   $('#weekview-container .new-user').on('click', function () {
     $('#weekview-container table')
       .find('thead tr')
-      .append($(document.createElement('td'))
-        .text('new user'));
+      .append($(document.createElement('td')));
+
+    $(this).parent()
+      .find('thead td:last-child')
+      .append($(document.createElement('input'))
+        .attr('type', 'text'));
 
     $('#weekview-container table')
       .find('tbody tr')
       .append($(document.createElement('td'))
         .addClass('timeslot busy'));
+
+    $(this).parent()
+      .find('input[type="text"]')
+      .focus()
+      .keypress(function (e) {
+        if (e.which == 13) {
+          var name = this.value;
+          $('#weekview-container table')
+            .find('thead td:last-child')
+            .text(name);
+        }
+      });
   });
 
 }());
