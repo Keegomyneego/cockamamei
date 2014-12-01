@@ -48,31 +48,12 @@
   </div>
 </div>
 
-<div id="weekview-container">
+<div id="weekview-container" class="view-mode">
   <div class="change-week noselect" id="prevWeek">
     <span>&lt;</span>
   </div>
 
-  <div class="day clickable noselect">
-    <h1>Sunday</h1>
-  </div>
-  <div class="day clickable noselect">
-    <h1>Monday</h1>
-  </div>
-  <div class="day clickable noselect">
-    <h1>Tuesday</h1>
-  </div>
-  <div class="day clickable noselect">
-    <h1>Wednesday</h1>
-  </div>
-  <div class="day clickable noselect">
-    <h1>Thursday</h1>
-  </div>
-  <div class="day clickable noselect">
-    <h1>Friday</h1>
-  </div>
-  <div class="day clickable noselect">
-    <h1>Saturday</h1>
+  <div class="week">
   </div>
 
   <div class="change-week noselect" id="nextWeek">

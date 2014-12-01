@@ -1,0 +1,11 @@
+#weekview-container .day.edit-mode {
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-left: 2px;
+  padding-right: 2px;
+  width: 7em;
+}
+
+#weekview-container h1.edit-mode {
+  font-size: 14px;
+}

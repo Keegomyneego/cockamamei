@@ -134,9 +134,10 @@
     vertical-align: middle;
     text-align: center;
     /* location */
-    height: 15em;
     width: 15em;
-    margin: 5em 0em;
+    height: 15em;
+    margin-top: 5em;
+    margin-bottom: 5em;
     padding: 1em;
 }
 
@@ -144,7 +145,7 @@
     margin: 0px 0px 12px 0px;
 }
 
-#weekview-container .day > div {
+#weekview-container .timetable {
     width: 36em !important;
 }
 
@@ -169,10 +170,6 @@
     width: 40em;
     margin: 0em;
     padding: 2em;
-}
-
-#weekview-container .day.large h1 {
-    font-size: xx-large;
 }
 
 #weekview-container .day.large th {
