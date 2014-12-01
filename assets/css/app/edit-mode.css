@@ -7,7 +7,7 @@
 
 #weekview-container .day.edit-mode:first-child {
   padding-left: 30px;
-  width: 155px;
+  width: 148px;
 }
 
 #weekview-container .day:first-child h1.edit-mode {
@@ -25,4 +25,8 @@
 
 #weekview-container .timetable.edit-mode {
     width: 100% !important;
+}
+
+#weekview-container .timetable table.edit-mode {
+  margin: auto;
 }

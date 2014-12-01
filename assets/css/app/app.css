@@ -151,15 +151,17 @@
 }
 
 #weekview-container .timetable {
-    width: 36em !important;
+    position: relative;
+}
+
+#weekview-container .timetable td {
+    width: 78px !important;
 }
 
 #weekview-container .day table {
     border-spacing: 1px;
     border-collapse: separate;
     table-layout: fixed;
-    width: 100%;
-    margin: auto;
 }
 
 #weekview-container .day.small {
@@ -172,7 +174,7 @@
 
 #weekview-container .day.large {
     height: auto;
-    width: 40em;
+    width: auto;
     margin: 0em;
     padding: 30px;
 }
@@ -195,4 +197,27 @@
 
 #weekview-container .day td.timeslot.free {
     background-color: hsl(120, 30%, 80%);
+}
+
+#weekview-container .day .new-user {
+    position: absolute;
+    right: 0px;
+    height: 100%;
+    width: 40px;
+    background-color: hsl(0, 0%, 92%);
+}
+
+#weekview-container .day .new-user:hover {
+    background-color: hsl(0, 0%, 90%);
+}
+
+#weekview-container .day .new-user .glyphicon {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    color: hsl(0, 0%, 80%);
+}
+
+#weekview-container .day .new-user:hover .glyphicon {
+    color: hsl(0, 0%, 50%);
 }

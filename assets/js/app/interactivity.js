@@ -3,7 +3,7 @@
  * of the interactivity of the app.
  */
 
-/* globals $,console */
+/* globals $,document,console */
 
 (function () {
 
@@ -50,20 +50,22 @@
       $('#weekview-container').find('thead, th, td').hide();
       $('#weekview-container').find('.day:first-of-type th').show();
       $('#weekview-container').find('td:first-of-type').show();
-      $('#weekview-container .timetable').show('slow');
+      $('#weekview-container .timetable').show(animationSpeeds.timeTable);
       $('#weekview-container .clickable').removeClass('clickable');
     } else {
       /* enter view mode */
 
       switchText('#switch-mode', 'Edit Availability');
 
-      $('#weekview-container .day:not(.large) .timetable').hide('slow', function () {
-        $('#weekview-container').find('thead, th, td').show();
-      });
+      $('#weekview-container .day:not(.large) .timetable')
+        .hide(animationSpeeds.timeTable, function () {
+          $('#weekview-container').find('thead, th, td').show();
+        });
       $('#weekview-container .day.large .timetable').find('thead, th, td').show();
       $('#weekview-container .edit-mode').switchClass('edit-mode', 'view-mode', 'slow');
       $('#weekview-container .day:not(.large)').addClass('clickable');
       $('#weekview-container .day.large h1').addClass('clickable');
+      $('#weekview-container .new-user').addClass('clickable');
     }
 
     window.app.editMode = !window.app.editMode;
@@ -94,7 +96,7 @@
       /* unenlarge other days */
       $day.siblings('.large, .view-mode')
         .children('.timetable')
-        .hide(animationSpeeds.timeTable, function () {
+        .slideUp(animationSpeeds.timeTable, function () {
           $(this).parent()
             .switchClass('large', 'small', animationSpeeds.day)
             .children('h1')
@@ -104,7 +106,7 @@
       /* unshrink and enlarge self then show timeslots */
       $day.switchClass('small', 'large', animationSpeeds.day, function () {
           $day.children('.timetable')
-              .show(animationSpeeds.timeTable);
+              .slideDown(animationSpeeds.timeTable);
         })
         .children('h1')
         .removeClass('small', animationSpeeds.day);
@@ -126,7 +128,7 @@
     if ($day.is('.large.view-mode')) {
 
       /* hide own timeslots */
-      $day.children('.timetable').hide(animationSpeeds.timeTable, function () {
+      $day.children('.timetable').slideUp(animationSpeeds.timeTable, function () {
         /* unshrink all other days */
         $day.siblings()
             .removeClass('small', animationSpeeds.day)
@@ -164,7 +166,7 @@
   });
 
   /* modify timeslots when in edit mode */
-  $('#weekview-container .timeslot').on('mouseenter', function () {
+  $('#weekview-container .timeslot:first-of-type').on('mouseenter', function () {
     if (window.app.mousedown) {
       if (window.app.buttonClicked == 'left') {
         $(this).switchClass('busy', 'free', animationSpeeds.timeSlot);
@@ -172,6 +174,18 @@
         $(this).switchClass('free', 'busy', animationSpeeds.timeSlot);
       }
     }
+  });
+  
+  $('#weekview-container .new-user').on('click', function () {
+    $('#weekview-container table')
+      .find('thead tr')
+      .append($(document.createElement('td'))
+        .text('new user'));
+
+    $('#weekview-container table')
+      .find('tbody tr')
+      .append($(document.createElement('td'))
+        .addClass('timeslot busy'));
   });
 
 }());
