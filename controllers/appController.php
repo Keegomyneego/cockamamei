@@ -8,7 +8,7 @@ class appController extends BaseController
 
   public function weekview()
   {
-    header('Location: /cockamamei/app');
+    header('Location: /Cockamamei/app');
   }
 }
 
