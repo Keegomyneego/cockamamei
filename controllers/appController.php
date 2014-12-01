@@ -8,7 +8,7 @@ class appController extends BaseController
 
   public function weekview()
   {
-    $this->template->render('app/weekview');
+      $this->template->render('app/weekview');
   }
 }
 
