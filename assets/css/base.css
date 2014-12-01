@@ -54,12 +54,17 @@ h1 {
     font-size: xx-large;
 }
 
-ul {
-    list-style: decimal inside;
-}
-
 img {
     width: 100%;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .header {
@@ -76,4 +81,33 @@ img {
     height: 60px;
     width: auto;
     margin: 10px;
+}
+
+.navmenu {
+    position: absolute;
+    line-height: 80px;
+    top: 0px;
+    right: 0px;
+}
+
+.navmenu li {
+    list-style-type: none;
+    display: inline-block;
+}
+
+.navmenu li a {
+    font-size: large;
+    color: white;
+    display: inline-block;
+    height: 80px;
+    padding: 0px 40px;
+}
+
+.navmenu li a:hover {
+    text-decoration: none;
+    background-color: #55DDFF;
+}
+
+.clickable {
+    cursor: pointer;
 }
