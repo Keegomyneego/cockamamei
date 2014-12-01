@@ -1,11 +1,19 @@
-.clickable {
-    cursor: pointer;
+#helpmenu {
+    position: absolute;
+    right: 235px;
+    transform: translateX(50%);
+    display: none;
+    background-color: hsl(0, 0%, 100%);
+    padding: 20px;
+}
+
+#helpmenu img {
+    width: 50px;
 }
 
 #events {
-    position: relative;
-    top: 5em;
-    left: 10em;
+    margin-top: 2em;
+    margin-left: 2em;
     padding: 5px;
     background-color: hsl(0, 0%, 95%);
     width: 32em;
@@ -27,15 +35,46 @@
     font-family: Copperplate Gothic Bold, sans-serif;
 }
 
+#events .clickable:hover,
+#weekview-container .clickable:hover,
+#weekview-container .clickable:hover h1 {
+    color: hsl(0, 0%, 60%);
+}
+
+.change-week {
+    font-family: Consolas;
+    font-size: 48pt;
+    color: hsl(0, 0%, 90%);
+    text-align: center;
+    height: 1em;
+}
+
+.change-week span {
+    cursor: pointer;
+    display: inline-block;
+    line-height: 38px;
+    margin: -35px;
+    margin-top: -72px;
+    padding-bottom: 10px;
+    transform: rotate(0.25turn);
+    vertical-align: middle;
+    width: 37px;
+}
+
+.change-week span:hover {
+    text-shadow: 0px 0px 10px hsl(0, 0%, 50%);
+    color: hsl(0, 0%, 95%);
+}
+
 #weekview-container {
-    position: relative;
-    top: 22em;
+    margin-top: 22em;
+    margin-bottom: -20em;
     transform: translateY(-50%);
     white-space: nowrap;
     text-align: center;
 }
 
-#weekview-container > div {
+#weekview-container .day {
     /* aesthetics */
     background-color: hsl(0, 0%, 95%);
     /* formatting */
@@ -47,29 +86,17 @@
     width: 15em;
     margin: 5em 0em;
     padding: 1em;
-
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-.clickable:hover,
-.clickable:hover h1 {
-    color: hsl(0, 0%, 60%);
 }
 
 #weekview-container h1 {
     margin: 0px 0px 12px 0px;
 }
 
-#weekview-container > div > div {
+#weekview-container .day > div {
     width: 36em !important;
 }
 
-#weekview-container > div > div > table {
+#weekview-container .day table {
     border-spacing: 1px;
     border-collapse: separate;
     table-layout: fixed;
@@ -77,41 +104,41 @@
     margin: auto;
 }
 
-#weekview-container > div.small {
+#weekview-container .day.small {
     width: 13em;
 }
 
-#weekview-container > div.small h1 {
+#weekview-container h1.small {
     font-size: large;
 }
 
-#weekview-container > div.large {
+#weekview-container .day.large {
     height: auto;
     width: 40em;
     margin: 0em;
     padding: 2em;
 }
 
-#weekview-container > div.large h1 {
+#weekview-container .day.large h1 {
     font-size: xx-large;
 }
 
-#weekview-container > div.large table th {
+#weekview-container .day.large th {
     width: 3em;
     padding-right: 0.5em; 
     text-align: right;
 }
 
-#weekview-container > div.large table td.timeslot {
+#weekview-container .day.large td.timeslot {
     position: relative;
     height: 22px;
     cursor: pointer;
 }
 
-#weekview-container > div.large table td.timeslot.busy {
+#weekview-container .day.large td.timeslot.busy {
     background-color: hsl(0, 30%, 80%);
 }
 
-#weekview-container > div.large table td.timeslot.free {
+#weekview-container .day.large td.timeslot.free {
     background-color: hsl(120, 30%, 80%);
 }

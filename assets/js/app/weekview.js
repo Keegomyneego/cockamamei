@@ -1,59 +1,75 @@
-/* globals $,document,console */
+/* globals $,document */
 $(document).ready(function () {
+
 	'use strict';
 	window.weekview = {};
 
-	/* Table with header and no body */
-	var $genericTable = $(
-		'<table>' +
-			'<thead>' +
-				'<tr>' +
-					'<th></th>' +
-					'<td>Bryant</td>' +
-					'<td>Chau</td>' +
-					'<td>Hamzah</td>' +
-					'<td>Keegan</td>' +
-				'</tr>' +
-			'</thead>' +
-		'</table>');
-
 	/**
-	 * Generate all the timeslots for a day based on start/end time
-	 * and the number of columns requested.
+	 * Generate days in weekview.
 	 */
-	function generateTbody(startTime, endTime, columns) {
-		var $tbody = $(document.createElement('tbody'));
-		var $genericRow = $(document.createElement('tr'));
-		$genericRow.append(document.createElement('th'));
-		for (var col = 0; col < columns; col++) {
-			$genericRow.append('<td class="timeslot busy"></td>');
+	(function () {
+		/* Table with header and no body */
+		var $genericTable = $(
+			'<table>' +
+				'<thead>' +
+					'<tr>' +
+						'<th></th>' +
+						'<td>Bryant</td>' +
+						'<td>Chau</td>' +
+						'<td>Hamzah</td>' +
+						'<td>Keegan</td>' +
+					'</tr>' +
+				'</thead>' +
+			'</table>');
+
+		/**
+		 * Generate all the timeslots for a day based on start/end time
+		 * and the number of columns requested.
+		 */
+		function generateTbody(startTime, endTime, columns) {
+			var $tbody = $(document.createElement('tbody'));
+			var $genericRow = $(document.createElement('tr'));
+			$genericRow.append(document.createElement('th'));
+			for (var col = 0; col < columns; col++) {
+				$genericRow.append('<td class="timeslot busy"></td>');
+			}
+
+			for (var time = startTime; time <= endTime; time++) {
+				var $row = $genericRow.clone();
+				$row.children('th').html(time + ':00');
+				$tbody.append($row);
+			}
+
+			return $tbody;
 		}
 
-		for (var time = startTime; time <= endTime; time++) {
-			var $row = $genericRow.clone();
-			$row.children('th').html(time + ':00');
-			$tbody.append($row);
-		}
+		$genericTable.append(generateTbody(6, 20, 4));
 
-		return $tbody;
-	}
+		$('#weekview-container .day').append(document.createElement('div'));
+		$('#weekview-container .day div').append($genericTable.clone());
+		$('#weekview-container .day div').hide();
+	}());
 
-	$genericTable.append(generateTbody(6, 20, 4));
 
-	$('#weekview-container div').append(document.createElement('div'));
-	$('#weekview-container div div').append($genericTable.clone());
-	$('#weekview-container div div').hide();
 
 	/**
 	 * Set up event handlers and animations.
 	 */
 	(function () {
 
+		/* add help menu dropdown functionality */
+		$('#help').on('click', function () {
+			$('#helpmenu').toggle();
+		});
+
 		/* enlarge a day view */
-		$('#weekview-container > div').on('mousedown', function () {
+		$('#weekview-container .day').on('mousedown', function () {
 			var $div = $(this);
 			if (!$div.hasClass('large')) {
-				$div.siblings(':not(.large)').addClass('small', 250);
+				$div.siblings(':not(.large)')
+				    .addClass('small', 250)
+				    .children('h1')
+				    .addClass('small', 250);
 				$div.removeClass('small');
 				$div.addClass('large', 250, function () {
 					$div.children('div').show(500);
@@ -65,12 +81,15 @@ $(document).ready(function () {
 		});
 
 		/* shrink a day view */
-		$('#weekview-container div h1').on('mousedown', function () {
+		$('#weekview-container .day h1').on('mousedown', function () {
 			var $div = $(this).parent();
 			if ($div.hasClass('large')) {
 				$div.children('div').hide(500, function () {
 					if (!$div.siblings().hasClass('large')) {
-						$div.parent().children().removeClass('small', 250);
+						$div.parent().children()
+						    .removeClass('small', 250)
+						    .children('h1')
+						    .removeClass('small', 250);
 					}
 					$div.removeClass('large', 250);
 				});
@@ -81,7 +100,7 @@ $(document).ready(function () {
 		});
 
 		/* prevent right-click menu */
-		$('#weekview-container > div').on('contextmenu', function () {
+		$('#weekview-container .day').on('contextmenu', function () {
 			return false;
 		});
 
