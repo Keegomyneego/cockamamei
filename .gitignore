@@ -3,3 +3,4 @@
 */.DS_Store
 config/local.ini
 config/site.ini
+node_modules

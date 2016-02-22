@@ -1,7 +1,7 @@
 <?php include 'views/partials/header.php'; ?>
 
 <div class="header small">
-  <img src="/<?php echo __PROJECT_NAME; ?>/assets/images/cockamamie_logo_small.png" alt="Cockamamie">
+  <img src="/assets/images/cockamamie_logo_small.png" alt="Cockamamie">
 </div>
 
 <div class="navmenu" id="main-nav">

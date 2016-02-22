@@ -1,0 +1,35 @@
+{
+  "name": "cockamamei",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "dev": "webpack-dev-server --devtool eval --progress --colors --hot --content-base build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Keegomyneego/cockamamei.git"
+  },
+  "keywords": [
+    "calendar"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Keegomyneego/cockamamei/issues"
+  },
+  "homepage": "https://github.com/Keegomyneego/cockamamei#readme",
+  "dependencies": {
+    "babel-loader": "^6.2.1",
+    "babel-preset-react": "^6.3.13",
+    "babelify": "^7.2.0",
+    "express": "^4.13.4",
+    "material-ui": "^0.14.4",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "webpack": "^1.12.12",
+    "webpack-dev-server": "^1.14.1"
+  }
+}

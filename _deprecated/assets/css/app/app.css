@@ -1,0 +1,226 @@
+#help-menu, #controls {
+    position: absolute;
+    text-align: center;
+    margin-top: 10px;
+}
+
+#help-menu {
+    text-align: center;
+    width: 12em !important;
+    right: 92px;
+    transform: translateX(50%);
+}
+
+#help-menu ul {
+    display: none;
+    background-color: #33CCFF;
+    position: relative;
+    zoom: 1;
+    text-align: left;
+    margin: 0px;
+}
+
+#help-menu li {
+    width: 100%;
+}
+
+#help-menu a {
+    padding: 20px;
+    width: 100%;
+}
+
+#controls {
+    padding: 20px;
+    background-color: hsl(0, 0%, 95%);
+    transform: translateX(-50%);
+    left: 50%;
+}
+
+#controls img {
+    width: 50px;
+}
+
+#module-container > div {
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 30px;
+    margin-bottom: 0em;
+    padding: 10px 30px;
+    background-color: hsl(0, 0%, 95%);
+    width: auto;
+}
+
+#module-container > div h1 {
+    margin: 0.5em 0px;
+}
+
+#events {
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+#events ul,
+#events ol {
+    list-style-type: none;
+}
+
+#events li:before {
+    content: "\0BB \020";
+    font-size: large;
+    font-family: Copperplate Gothic Bold, sans-serif;
+}
+
+#events .clickable:hover {
+    color: hsl(0, 0%, 60%);
+}
+
+#info-display {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: large;
+    text-align: center;
+    color: hsl(120, 25%, 50%);
+}
+
+#info-display h1 {
+    font-weight: bold;
+}
+
+#available-times {
+    position: absolute;
+    right: 186px;
+}
+
+.change-week {
+    font-family: Consolas;
+    font-weight: bold;
+    font-size: 48pt;
+    color: hsl(0, 0%, 90%);
+    text-align: center;
+    height: 1em;
+}
+
+.change-week span {
+    cursor: pointer;
+    display: inline-block;
+    line-height: 38px;
+    margin: -35px;
+    margin-top: -72px;
+    padding-bottom: 10px;
+    transform: rotate(0.25turn);
+    vertical-align: middle;
+    width: 37px;
+}
+
+.change-week span:hover {
+    text-shadow: 0px 0px 10px hsl(0, 0%, 50%);
+    color: hsl(0, 0%, 95%);
+}
+
+#weekview-container {
+    margin-top: 22em;
+    margin-bottom: -20em;
+    transform: translateY(-50%);
+    white-space: nowrap;
+    text-align: center;
+}
+
+#weekview-container .clickable:hover,
+#weekview-container .clickable:hover h1 {
+    color: hsl(0, 0%, 60%);
+}
+
+#weekview-container .day {
+    /* aesthetics */
+    background-color: hsl(0, 0%, 95%);
+    /* formatting */
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    /* location */
+    width: 15em;
+    height: 15em;
+    margin-top: 5em;
+    margin-bottom: 5em;
+    padding: 1em;
+}
+
+#weekview-container .day.small {
+    width: 13em;
+}
+
+#weekview-container .day.large {
+    height: auto;
+    width: auto;
+    margin: 0em;
+    padding: 30px;
+}
+
+#weekview-container h1 {
+    margin: 0px 0px 12px 0px;
+}
+
+#weekview-container h1.small {
+    font-size: large;
+}
+
+#weekview-container .timetable {
+    position: relative;
+}
+
+#weekview-container .timetable table {
+    border-collapse: separate;
+    border-spacing: 1px;
+}
+
+#weekview-container .timetable td {
+    width: 78px !important;
+}
+
+#weekview-container .timetable input[type='text'] {
+    width: inherit;
+}
+
+#weekview-container .day th {
+    width: 3em;
+    padding-right: 0.5em; 
+    text-align: right;
+}
+
+#weekview-container .day td.timeslot {
+    position: relative;
+    height: 22px;
+    cursor: pointer;
+}
+
+#weekview-container .day td.timeslot.busy {
+    background-color: hsl(0, 30%, 80%);
+}
+
+#weekview-container .day td.timeslot.free {
+    background-color: hsl(120, 30%, 80%);
+}
+
+#weekview-container .day .new-user {
+    position: absolute;
+    right: 0px;
+    height: 100%;
+    width: 40px;
+    background-color: hsl(0, 0%, 92%);
+}
+
+#weekview-container .day .new-user:hover {
+    background-color: hsl(0, 0%, 90%);
+}
+
+#weekview-container .day .new-user .glyphicon {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    color: hsl(0, 0%, 80%);
+}
+
+#weekview-container .day .new-user:hover .glyphicon {
+    color: hsl(0, 0%, 50%);
+}
